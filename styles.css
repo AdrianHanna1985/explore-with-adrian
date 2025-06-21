@@ -1,0 +1,129 @@
+
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f4ec;
+  color: #333;
+  line-height: 1.6;
+}
+
+[data-theme="dark"] body {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+h1, h2 {
+  font-family: 'Georgia', serif;
+  color: #2a3b2e;
+}
+
+[data-theme="dark"] h1, [data-theme="dark"] h2 {
+  color: #d8d8d8;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  background: linear-gradient(to bottom, #f4e3d7, #e6dbc9);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+[data-theme="dark"] .section {
+  background: linear-gradient(to bottom, #2a2a2a, #1c1c1c);
+}
+
+.section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.header {
+  background-color: #24382e;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+[data-theme="dark"] .header {
+  background-color: #111;
+}
+
+.logo {
+  max-height: 100px;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 100;
+}
+
+[data-theme="dark"] .theme-toggle {
+  color: #eee;
+}
+
+/* Footer */
+.footer {
+  background: #24382e;
+  color: #ddd;
+  text-align: center;
+  padding: 20px;
+}
+
+[data-theme="dark"] .footer {
+  background: #111;
+  color: #aaa;
+}
+
+.footer nav a {
+  color: #ddd;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+[data-theme="dark"] .footer nav a {
+  color: #bbb;
+}
+
+.footer nav a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .btn {
+    display: block;
+    margin: 10px auto;
+  }
+}
+
+/* Production Optimization Note:
+   When ready for deployment, consider using Vite or PostCSS with Autoprefixer and CSSNano.
+   This will help autoprefix CSS for browser compatibility,
+   minify your styles, and remove unused rules via PurgeCSS.
+*/
