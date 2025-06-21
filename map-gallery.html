@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Interactive Map Gallery | The American Backpacker</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+   <link rel="stylesheet" href="https://unpkg.com/photo-sphere-viewer@5/dist/photo-sphere-viewer.css" />
+<script src="https://unpkg.com/uevent@2/browser.js"></script>
+<script src="https://unpkg.com/three@0.152.2/build/three.min.js"></script>
+<script src="https://unpkg.com/photo-sphere-viewer@5/dist/photo-sphere-viewer.js"></script>
   <style>
     .media-label {
       font-size: 0.75rem;
@@ -140,5 +144,43 @@
         });
       });
   </script>
+<div id="psv-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; background:#000;"></div>
+
+<script>
+  const viewerContainer = document.getElementById('psv-modal');
+  let psv;
+
+  document.addEventListener('click', function (e) {
+    if (e.target.tagName === 'IMG' && e.target.src.includes('.360')) {
+      e.preventDefault();
+      viewerContainer.style.display = 'block';
+
+      if (psv) {
+        psv.setPanorama(e.target.src);
+      } else {
+        psv = new PhotoSphereViewer.Viewer({
+          container: viewerContainer,
+          panorama: e.target.src,
+          loadingImg: 'https://photo-sphere-viewer.js.org/assets/photosphere-logo.gif',
+          navbar: ['zoom', 'fullscreen', 'close'],
+        });
+      }
+
+      psv.once('ready', () => {
+        viewerContainer.focus();
+      });
+
+      psv.once('close', () => {
+        viewerContainer.style.display = 'none';
+      });
+    }
+  });
+
+  // Optional: close viewer if user clicks outside or presses Esc
+  viewerContainer.addEventListener('click', () => viewerContainer.style.display = 'none');
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') viewerContainer.style.display = 'none';
+  });
+</script>
 </body>
 </html>
