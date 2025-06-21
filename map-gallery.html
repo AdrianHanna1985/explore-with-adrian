@@ -9,6 +9,7 @@
 <script src="https://unpkg.com/uevent@2/browser.js"></script>
 <script src="https://unpkg.com/three@0.152.2/build/three.min.js"></script>
 <script src="https://unpkg.com/photo-sphere-viewer@5/dist/photo-sphere-viewer.js"></script>
+  <script src="https://unpkg.com/photo-sphere-viewer@5/dist/plugins/gyroscope.js"></script>
   <style>
     .media-label {
       font-size: 0.75rem;
@@ -158,12 +159,70 @@
       if (psv) {
         psv.setPanorama(e.target.src);
       } else {
-        psv = new PhotoSphereViewer.Viewer({
-          container: viewerContainer,
-          panorama: e.target.src,
-          loadingImg: 'https://photo-sphere-viewer.js.org/assets/photosphere-logo.gif',
-          navbar: ['zoom', 'fullscreen', 'close'],
-        });
+      psv = new PhotoSphereViewer.Viewer({
+  container: viewerContainer,
+  panorama: e.target.src,
+  loadingImg: 'https://photo-sphere-viewer.js.org/assets/photosphere-logo.gif',
+  navbar: ['zoom', 'fullscreen', 'gyroscope', 'close'],
+  usexmpdata: false,
+  touchmoveTwoFingers: false,
+  mousewheel: true,
+  defaultYaw: 0,
+        requestFullscreen: /Mobi|Android/i.test(navigator.userAgent),
+  plugins: [
+    [PhotoSphereViewer.GyroscopePlugin],
+  ],
+});
+        psv.once('ready', () => {
+  viewerContainer.focus();
+
+  if (window.DeviceOrientationEvent && typeof DeviceOrientationEvent.requestPermission === 'function') {
+    DeviceOrientationEvent.requestPermission().catch(() => {
+      alert('Enable motion access in browser settings to use gyroscope control.');
+    });
+  }
+});
+    document.addEventListener('keydown', (event) => {
+  if (!psv) return;
+
+  switch (event.key) {
+    case 'f':
+      psv.enterFullscreen();
+      break;
+    case 'g':
+      const gyro = psv.getPlugin(PhotoSphereViewer.GyroscopePlugin);
+      if (gyro) gyro.toggle();
+      break;
+    case 'Escape':
+      viewerContainer.style.display = 'none';
+      break;
+    case 'ArrowLeft':
+      psv.rotate({
+        yaw: psv.getPosition().yaw - 0.1,
+        pitch: psv.getPosition().pitch,
+      });
+      break;
+    case 'ArrowRight':
+      psv.rotate({
+        yaw: psv.getPosition().yaw + 0.1,
+        pitch: psv.getPosition().pitch,
+      });
+      break;
+    case 'ArrowUp':
+      psv.rotate({
+        yaw: psv.getPosition().yaw,
+        pitch: psv.getPosition().pitch + 0.1,
+      });
+      break;
+    case 'ArrowDown':
+      psv.rotate({
+        yaw: psv.getPosition().yaw,
+        pitch: psv.getPosition().pitch - 0.1,
+      });
+      break;
+  }
+});
+
       }
 
       psv.once('ready', () => {
