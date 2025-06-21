@@ -1,268 +1,1868 @@
 [
   {
-    "FileName": "palmdale-001.jpg",
-    "Latitude": 34.543056,
-    "Longitude": -118.035711,
-    "Altitude": 816.0,
-    "Source": "palmdale"
+    "FileName": "olancha-001.jpg",
+    "Latitude": 36.044603,
+    "Longitude": -117.946192,
+    "Source": "olancha"
   },
   {
-    "FileName": "palmdale-002.jpg",
-    "Latitude": 34.542886,
-    "Longitude": -118.035642,
-    "Altitude": 802.0,
-    "Source": "palmdale"
+    "FileName": "olancha-002.jpg",
+    "Latitude": 36.044603,
+    "Longitude": -117.946186,
+    "Source": "olancha"
   },
   {
-    "FileName": "palmdale-003.jpg",
-    "Latitude": 34.543219,
-    "Longitude": -118.035778,
-    "Altitude": 805.0,
-    "Source": "palmdale"
+    "FileName": "olancha-003.jpg",
+    "Latitude": 36.044608,
+    "Longitude": -117.946253,
+    "Source": "olancha"
   },
   {
-    "FileName": "palmdale-004.jpg",
-    "Latitude": 34.543311,
-    "Longitude": -118.035842,
-    "Altitude": 805.0,
-    "Source": "palmdale"
+    "FileName": "olancha-004.jpg",
+    "Latitude": 36.044617,
+    "Longitude": -117.946231,
+    "Source": "olancha"
   },
   {
-    "FileName": "palmdale-005.jpg",
-    "Latitude": 34.543536,
-    "Longitude": -118.035989,
-    "Altitude": 807.0,
-    "Source": "palmdale"
+    "FileName": "olancha-005.jpg",
+    "Latitude": 36.044606,
+    "Longitude": -117.946225,
+    "Source": "olancha"
   },
   {
-    "FileName": "palmdale-006.jpg",
-    "Latitude": 34.543547,
-    "Longitude": -118.035964,
-    "Altitude": 807.0,
-    "Source": "palmdale"
+    "FileName": "olancha-006.jpg",
+    "Latitude": 36.044603,
+    "Longitude": -117.946214,
+    "Source": "olancha"
   },
   {
-    "FileName": "palmdale-007.jpg",
-    "Latitude": 34.543264,
-    "Longitude": -118.036039,
-    "Altitude": 811.7,
-    "Source": "palmdale"
+    "FileName": "olancha-007.jpg",
+    "Latitude": 36.044603,
+    "Longitude": -117.946208,
+    "Source": "olancha"
   },
   {
-    "FileName": "palmdale-008.jpg",
-    "Latitude": 34.5435,
-    "Longitude": -118.035956,
-    "Altitude": 810.0,
-    "Source": "palmdale"
+    "FileName": "olancha-008.jpg",
+    "Latitude": 36.044606,
+    "Longitude": -117.946208,
+    "Source": "olancha"
   },
   {
-    "FileName": "palmdale-009.jpg",
-    "Latitude": 34.543556,
-    "Longitude": -118.035964,
-    "Altitude": 807.0,
-    "Source": "palmdale"
+    "FileName": "olancha-009.jpg",
+    "Latitude": 36.0446,
+    "Longitude": -117.946219,
+    "Source": "olancha"
   },
   {
-    "FileName": "palmdale-010.jpg",
-    "Latitude": 34.543333,
-    "Longitude": -118.035972,
-    "Altitude": 787.9,
-    "Source": "palmdale"
+    "FileName": "olancha-010.jpg",
+    "Latitude": 36.0446,
+    "Longitude": -117.946219,
+    "Source": "olancha"
   },
   {
-    "FileName": "palmdale-011.jpg",
-    "Latitude": 34.543236,
-    "Longitude": -118.036186,
-    "Altitude": 822.0,
-    "Source": "palmdale"
+    "FileName": "olancha-011.jpg",
+    "Latitude": 36.044603,
+    "Longitude": -117.946219,
+    "Source": "olancha"
   },
   {
-    "FileName": "palmdale-012.jpg",
-    "Latitude": 34.543078,
-    "Longitude": -118.036217,
-    "Altitude": 817.3,
-    "Source": "palmdale"
+    "FileName": "alabama-hills-001.jpg",
+    "Latitude": 36.611219,
+    "Longitude": -118.124875,
+    "Source": "alabama-hills"
   },
   {
-    "FileName": "palmdale-013.jpg",
-    "Latitude": 34.543192,
-    "Longitude": -118.0363,
-    "Altitude": 814.4,
-    "Source": "palmdale"
+    "FileName": "alabama-hills-002.jpg",
+    "Latitude": 36.611158,
+    "Longitude": -118.124319,
+    "Source": "alabama-hills"
   },
   {
-    "FileName": "red-rock-canyon-001.jpg",
-    "Latitude": 35.362575,
-    "Longitude": -117.97763055555556,
-    "Altitude": "712 m Above Sea Level",
-    "Source": "red-rock-canyon"
+    "FileName": "alabama-hills-003.jpg",
+    "Latitude": 36.613722,
+    "Longitude": -118.123989,
+    "Source": "alabama-hills"
   },
   {
-    "FileName": "red-rock-canyon-002.jpg",
-    "Latitude": 35.36253888888889,
-    "Longitude": -117.97765555555556,
-    "Altitude": "705 m Above Sea Level",
-    "Source": "red-rock-canyon"
+    "FileName": "alabama-hills-004.jpg",
+    "Latitude": 36.61358,
+    "Longitude": -118.122778,
+    "Source": "alabama-hills"
   },
   {
-    "FileName": "red-rock-canyon-003.jpg",
-    "Latitude": 35.362252777777776,
-    "Longitude": -117.97659722222222,
-    "Altitude": "709 m Above Sea Level",
-    "Source": "red-rock-canyon"
+    "FileName": "alabama-hills-005.jpg",
+    "Latitude": 36.61358,
+    "Longitude": -118.122669,
+    "Source": "alabama-hills"
   },
   {
-    "FileName": "red-rock-canyon-004.jpg",
-    "Latitude": 35.36225555555556,
-    "Longitude": -117.97660833333332,
-    "Altitude": "708 m Above Sea Level",
-    "Source": "red-rock-canyon"
+    "FileName": "alabama-hills-006.jpg",
+    "Latitude": 36.609444,
+    "Longitude": -118.121889,
+    "Source": "alabama-hills"
   },
   {
-    "FileName": "travertine-hot-springs-001.jpg",
-    "Latitude": 38.245631,
-    "Longitude": -119.204239,
-    "Altitude": NaN,
-    "Source": "travertine-hot-springs-decimal"
+    "FileName": "alabama-hills-007.jpg",
+    "Latitude": 36.611208,
+    "Longitude": -118.124778,
+    "Source": "alabama-hills"
   },
   {
-    "FileName": "travertine-hot-springs-002.jpg",
-    "Latitude": 38.245608,
-    "Longitude": -119.204678,
-    "Altitude": NaN,
-    "Source": "travertine-hot-springs-decimal"
+    "FileName": "alabama-hills-008.jpg",
+    "Latitude": 36.611208,
+    "Longitude": -118.124778,
+    "Source": "alabama-hills"
   },
   {
-    "FileName": "travertine-hot-springs-003.jpg",
-    "Latitude": 38.245411,
-    "Longitude": -119.204814,
-    "Altitude": NaN,
-    "Source": "travertine-hot-springs-decimal"
+    "FileName": "alabama-hills-009.jpg",
+    "Latitude": 36.613547,
+    "Longitude": -118.124167,
+    "Source": "alabama-hills"
   },
   {
-    "FileName": "travertine-hot-springs-004.jpg",
-    "Latitude": 38.245381,
-    "Longitude": -119.205283,
-    "Altitude": "2022.7 m Above Sea Level",
-    "Source": "travertine-hot-springs-decimal"
+    "FileName": "alabama-hills-010.jpg",
+    "Latitude": 36.613572,
+    "Longitude": -118.122722,
+    "Source": "alabama-hills"
   },
   {
-    "FileName": "travertine-hot-springs-005.jpg",
-    "Latitude": 38.245375,
-    "Longitude": -119.205289,
-    "Altitude": NaN,
-    "Source": "travertine-hot-springs-decimal"
+    "FileName": "alabama-hills-011.jpg",
+    "Latitude": 36.613547,
+    "Longitude": -118.122331,
+    "Source": "alabama-hills"
   },
   {
-    "FileName": "travertine-hot-springs-006.jpg",
-    "Latitude": 38.245597,
-    "Longitude": -119.205869,
-    "Altitude": "2022.3 m Above Sea Level",
-    "Source": "travertine-hot-springs-decimal"
+    "FileName": "bishop-001.jpg",
+    "Latitude": 37.374997,
+    "Longitude": -118.426628,
+    "Source": "bishop"
   },
   {
-    "FileName": "travertine-hot-springs-007.jpg",
-    "Latitude": 38.245283,
-    "Longitude": -119.2066,
-    "Altitude": "2016.7 m Above Sea Level",
-    "Source": "travertine-hot-springs-decimal"
+    "FileName": "bishop-002.jpg",
+    "Latitude": 37.374753,
+    "Longitude": -118.426469,
+    "Source": "bishop"
   },
   {
-    "FileName": "travertine-hot-springs-008.jpg",
-    "Latitude": 38.244142,
-    "Longitude": -119.206478,
-    "Altitude": "2013.9 m Above Sea Level",
-    "Source": "travertine-hot-springs-decimal"
+    "FileName": "bishop-003.jpg",
+    "Latitude": 37.374833,
+    "Longitude": -118.426353,
+    "Source": "bishop"
   },
   {
-    "FileName": "travertine-hot-springs-009.jpg",
-    "Latitude": 38.24415,
-    "Longitude": -119.206486,
-    "Altitude": "2030.3 m Above Sea Level",
-    "Source": "travertine-hot-springs-decimal"
+    "FileName": "bishop-004.jpg",
+    "Latitude": 37.374683,
+    "Longitude": -118.426283,
+    "Source": "bishop"
   },
   {
-    "FileName": "travertine-hot-springs-010.jpg",
-    "Latitude": 38.245325,
-    "Longitude": -119.205161,
-    "Altitude": "2020.3 m Above Sea Level",
-    "Source": "travertine-hot-springs-decimal"
+    "FileName": "bishop-005.jpg",
+    "Latitude": 37.374906,
+    "Longitude": -118.427236,
+    "Source": "bishop"
   },
   {
-    "FileName": "travertine-hot-springs-011.jpg",
-    "Latitude": 38.246122,
-    "Longitude": -119.203861,
-    "Altitude": "2026.8 m Above Sea Level",
-    "Source": "travertine-hot-springs-decimal"
+    "FileName": "bridgeport-reservoir-001.jpg",
+    "Latitude": 38.288303,
+    "Longitude": -119.214911,
+    "Source": "bridgeport-reservoir"
   },
   {
-    "FileName": "travertine-hot-springs-012.jpg",
-    "Latitude": 38.246142,
-    "Longitude": -119.203875,
-    "Altitude": "2025.5 m Above Sea Level",
-    "Source": "travertine-hot-springs-decimal"
+    "FileName": "bridgeport-reservoir-002.jpg",
+    "Latitude": 38.288553,
+    "Longitude": -119.216253,
+    "Source": "bridgeport-reservoir"
   },
   {
-    "FileName": "travertine-hot-springs-013.jpg",
-    "Latitude": 38.246158,
-    "Longitude": -119.203889,
-    "Altitude": NaN,
-    "Source": "travertine-hot-springs-decimal"
+    "FileName": "bridgeport-reservoir-003.jpg",
+    "Latitude": 38.288994,
+    "Longitude": -119.216742,
+    "Source": "bridgeport-reservoir"
+  },
+  {
+    "FileName": "bridgeport-reservoir-004.jpg",
+    "Latitude": 38.288406,
+    "Longitude": -119.216742,
+    "Source": "bridgeport-reservoir"
+  },
+  {
+    "FileName": "bridgeport-reservoir-005.jpg",
+    "Latitude": 38.299575,
+    "Longitude": -119.217186,
+    "Source": "bridgeport-reservoir"
+  },
+  {
+    "FileName": "bridgeport-reservoir-006.jpg",
+    "Latitude": 38.255778,
+    "Longitude": -119.227139,
+    "Source": "bridgeport-reservoir"
+  },
+  {
+    "FileName": "bridgeport-reservoir-007.jpg",
+    "Latitude": 38.255778,
+    "Longitude": -119.227139,
+    "Source": "bridgeport-reservoir"
+  },
+  {
+    "FileName": "bridgeport-reservoir-008.jpg",
+    "Latitude": 38.256086,
+    "Longitude": -119.227464,
+    "Source": "bridgeport-reservoir"
+  },
+  {
+    "FileName": "bridgeport-reservoir-009.jpg",
+    "Latitude": 38.256086,
+    "Longitude": -119.227464,
+    "Source": "bridgeport-reservoir"
+  },
+  {
+    "FileName": "bridgeport-reservoir-010.jpg",
+    "Latitude": 38.288986,
+    "Longitude": -119.216775,
+    "Source": "bridgeport-reservoir"
+  },
+  {
+    "FileName": "bridgeport-reservoir-011.jpg",
+    "Latitude": 38.288986,
+    "Longitude": -119.216775,
+    "Source": "bridgeport-reservoir"
+  },
+  {
+    "FileName": "bridgeport-reservoir-012.jpg",
+    "Latitude": 38.289028,
+    "Longitude": -119.216775,
+    "Source": "bridgeport-reservoir"
+  },
+  {
+    "FileName": "bridgeport-reservoir-013.jpg",
+    "Latitude": 38.289028,
+    "Longitude": -119.216775,
+    "Source": "bridgeport-reservoir"
+  },
+  {
+    "FileName": "bridgeport-reservoir-014.jpg",
+    "Latitude": 38.289028,
+    "Longitude": -119.216775,
+    "Source": "bridgeport-reservoir"
+  },
+  {
+    "FileName": "bridgeport-reservoir-015.jpg",
+    "Latitude": 38.289028,
+    "Longitude": -119.216775,
+    "Source": "bridgeport-reservoir"
+  },
+  {
+    "FileName": "bridgeport-reservoir-016.jpg",
+    "Latitude": 38.289028,
+    "Longitude": -119.216775,
+    "Source": "bridgeport-reservoir"
+  },
+  {
+    "FileName": "bridgeport-reservoir-017.jpg",
+    "Latitude": 38.289028,
+    "Longitude": -119.216775,
+    "Source": "bridgeport-reservoir"
+  },
+  {
+    "FileName": "bridgeport-reservoir-018.jpg",
+    "Latitude": 38.289028,
+    "Longitude": -119.216775,
+    "Source": "bridgeport-reservoir"
+  },
+  {
+    "FileName": "bridgeport-reservoir-019.jpg",
+    "Latitude": 38.289028,
+    "Longitude": -119.216775,
+    "Source": "bridgeport-reservoir"
+  },
+  {
+    "FileName": "bridgeport-reservoir-020.jpg",
+    "Latitude": 38.255931,
+    "Longitude": -119.227528,
+    "Source": "bridgeport-reservoir"
+  },
+  {
+    "FileName": "bridgeport-reservoir-021.jpg",
+    "Latitude": 38.255592,
+    "Longitude": -119.227528,
+    "Source": "bridgeport-reservoir"
+  },
+  {
+    "FileName": "bridgeport-reservoir-022.jpg",
+    "Latitude": 38.255592,
+    "Longitude": -119.227528,
+    "Source": "bridgeport-reservoir"
+  },
+  {
+    "FileName": "bridgeport-reservoir-023.jpg",
+    "Latitude": 38.256044,
+    "Longitude": -119.219325,
+    "Source": "bridgeport-reservoir"
+  },
+  {
+    "FileName": "bridgeport-reservoir-024.jpg",
+    "Latitude": 38.256044,
+    "Longitude": -119.219325,
+    "Source": "bridgeport-reservoir"
+  },
+  {
+    "FileName": "bridgeport-reservoir-025.jpg",
+    "Latitude": 38.256044,
+    "Longitude": -119.219325,
+    "Source": "bridgeport-reservoir"
+  },
+  {
+    "FileName": "bridgeport-reservoir-026.jpg",
+    "Latitude": 38.281881,
+    "Longitude": -119.218522,
+    "Source": "bridgeport-reservoir"
+  },
+  {
+    "FileName": "bridgeport-reservoir-027.jpg",
+    "Latitude": 38.289028,
+    "Longitude": -119.218686,
+    "Source": "bridgeport-reservoir"
+  },
+  {
+    "FileName": "bridgeport-reservoir-028.jpg",
+    "Latitude": 38.289419,
+    "Longitude": -119.219361,
+    "Source": "bridgeport-reservoir"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-001.jpg",
+    "Latitude": 36.446544,
+    "Longitude": -118.168894,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-002.jpg",
+    "Latitude": 36.447847,
+    "Longitude": -118.170631,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-003.jpg",
+    "Latitude": 36.448033,
+    "Longitude": -118.168839,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-004.jpg",
+    "Latitude": 36.448033,
+    "Longitude": -118.168444,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-005.jpg",
+    "Latitude": 36.452928,
+    "Longitude": -118.173725,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-006.jpg",
+    "Latitude": 36.452928,
+    "Longitude": -118.173653,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-007.jpg",
+    "Latitude": 36.447681,
+    "Longitude": -118.169172,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-008.jpg",
+    "Latitude": 36.447656,
+    "Longitude": -118.169353,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-009.jpg",
+    "Latitude": 36.447664,
+    "Longitude": -118.169353,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-010.jpg",
+    "Latitude": 36.447664,
+    "Longitude": -118.169631,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-011.jpg",
+    "Latitude": 36.457528,
+    "Longitude": -118.193131,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-012.jpg",
+    "Latitude": 36.457528,
+    "Longitude": -118.193131,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-013.jpg",
+    "Latitude": 36.458253,
+    "Longitude": -118.209892,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-014.jpg",
+    "Latitude": 36.458222,
+    "Longitude": -118.209892,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-015.jpg",
+    "Latitude": 36.458222,
+    "Longitude": -118.209892,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-016.jpg",
+    "Latitude": 36.458222,
+    "Longitude": -118.209892,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-017.jpg",
+    "Latitude": 36.458222,
+    "Longitude": -118.209892,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-018.jpg",
+    "Latitude": 36.458222,
+    "Longitude": -118.209892,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-019.jpg",
+    "Latitude": 36.458222,
+    "Longitude": -118.209892,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-020.jpg",
+    "Latitude": 36.465861,
+    "Longitude": -118.226403,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-021.jpg",
+    "Latitude": 36.465861,
+    "Longitude": -118.226403,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-022.jpg",
+    "Latitude": 36.470642,
+    "Longitude": -118.229194,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-023.jpg",
+    "Latitude": 36.470642,
+    "Longitude": -118.229194,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-024.jpg",
+    "Latitude": 36.470642,
+    "Longitude": -118.229194,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-025.jpg",
+    "Latitude": 36.470642,
+    "Longitude": -118.229194,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-026.jpg",
+    "Latitude": 36.470642,
+    "Longitude": -118.229194,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-027.jpg",
+    "Latitude": 36.474225,
+    "Longitude": -118.161528,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-028.jpg",
+    "Latitude": 36.474225,
+    "Longitude": -118.161528,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-029.jpg",
+    "Latitude": 36.474225,
+    "Longitude": -118.161528,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-030.jpg",
+    "Latitude": 36.474225,
+    "Longitude": -118.161528,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-031.jpg",
+    "Latitude": 36.474225,
+    "Longitude": -118.161528,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-032.jpg",
+    "Latitude": 36.474225,
+    "Longitude": -118.161528,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-033.jpg",
+    "Latitude": 36.474225,
+    "Longitude": -118.161528,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-034.jpg",
+    "Latitude": 36.481089,
+    "Longitude": -118.163353,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-035.jpg",
+    "Latitude": 36.447756,
+    "Longitude": -118.168544,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-036.jpg",
+    "Latitude": 36.448033,
+    "Longitude": -118.168492,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-037.jpg",
+    "Latitude": 36.481089,
+    "Longitude": -118.168492,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-038.jpg",
+    "Latitude": 36.4472,
+    "Longitude": -118.168472,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-039.jpg",
+    "Latitude": 36.472736,
+    "Longitude": -118.115053,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-040.jpg",
+    "Latitude": 36.4818,
+    "Longitude": -118.213044,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-041.jpg",
+    "Latitude": 36.4818,
+    "Longitude": -118.213044,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-042.jpg",
+    "Latitude": 36.482358,
+    "Longitude": -118.208467,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-043.jpg",
+    "Latitude": 36.484192,
+    "Longitude": -118.225197,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-044.jpg",
+    "Latitude": 36.484192,
+    "Longitude": -118.225197,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-045.jpg",
+    "Latitude": 36.484861,
+    "Longitude": -118.220592,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-046.jpg",
+    "Latitude": 36.484861,
+    "Longitude": -118.220592,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-047.jpg",
+    "Latitude": 36.484861,
+    "Longitude": -118.220592,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-048.jpg",
+    "Latitude": 36.472897,
+    "Longitude": -118.113961,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-049.jpg",
+    "Latitude": 36.472844,
+    "Longitude": -118.115019,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-050.jpg",
+    "Latitude": 36.447272,
+    "Longitude": -118.1787,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-051.jpg",
+    "Latitude": 36.483936,
+    "Longitude": -118.100872,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-052.jpg",
+    "Latitude": 36.483936,
+    "Longitude": -118.100961,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "cottonwood-campgrounds-053.jpg",
+    "Latitude": 36.474089,
+    "Longitude": -118.114172,
+    "Source": "cottonwood-campgrounds"
+  },
+  {
+    "FileName": "diaz-lake-001.jpg",
+    "Latitude": 36.561594,
+    "Longitude": -118.058,
+    "Source": "diaz-lake"
+  },
+  {
+    "FileName": "diaz-lake-002.jpg",
+    "Latitude": 36.561583,
+    "Longitude": -118.057969,
+    "Source": "diaz-lake"
+  },
+  {
+    "FileName": "diaz-lake-003.jpg",
+    "Latitude": 36.561569,
+    "Longitude": -118.058058,
+    "Source": "diaz-lake"
+  },
+  {
+    "FileName": "diaz-lake-004.jpg",
+    "Latitude": 36.561567,
+    "Longitude": -118.058081,
+    "Source": "diaz-lake"
+  },
+  {
+    "FileName": "diaz-lake-005.jpg",
+    "Latitude": 36.561531,
+    "Longitude": -118.057639,
+    "Source": "diaz-lake"
+  },
+  {
+    "FileName": "diaz-lake-006.jpg",
+    "Latitude": 36.561536,
+    "Longitude": -118.057658,
+    "Source": "diaz-lake"
+  },
+  {
+    "FileName": "diaz-lake-007.jpg",
+    "Latitude": 36.561525,
+    "Longitude": -118.057767,
+    "Source": "diaz-lake"
+  },
+  {
+    "FileName": "diaz-lake-008.jpg",
+    "Latitude": 36.561511,
+    "Longitude": -118.057878,
+    "Source": "diaz-lake"
+  },
+  {
+    "FileName": "diaz-lake-009.jpg",
+    "Latitude": 36.561522,
+    "Longitude": -118.057953,
+    "Source": "diaz-lake"
+  },
+  {
+    "FileName": "diaz-lake-010.jpg",
+    "Latitude": 36.561511,
+    "Longitude": -118.057878,
+    "Source": "diaz-lake"
+  },
+  {
+    "FileName": "diaz-lake-011.jpg",
+    "Latitude": 36.561478,
+    "Longitude": -118.057503,
+    "Source": "diaz-lake"
+  },
+  {
+    "FileName": "diaz-lake-012.jpg",
+    "Latitude": 36.561544,
+    "Longitude": -118.057783,
+    "Source": "diaz-lake"
+  },
+  {
+    "FileName": "diaz-lake-013.jpg",
+    "Latitude": 36.561486,
+    "Longitude": -118.057928,
+    "Source": "diaz-lake"
+  },
+  {
+    "FileName": "diaz-lake-014.jpg",
+    "Latitude": 36.561497,
+    "Longitude": -118.057867,
+    "Source": "diaz-lake"
+  },
+  {
+    "FileName": "diaz-lake-015.jpg",
+    "Latitude": 36.561406,
+    "Longitude": -118.057783,
+    "Source": "diaz-lake"
+  },
+  {
+    "FileName": "diaz-lake-016.jpg",
+    "Latitude": 36.561575,
+    "Longitude": -118.057803,
+    "Source": "diaz-lake"
+  },
+  {
+    "FileName": "diaz-lake-017.jpg",
+    "Latitude": 36.561406,
+    "Longitude": -118.057714,
+    "Source": "diaz-lake"
+  },
+  {
+    "FileName": "diaz-lake-018.jpg",
+    "Latitude": 36.561825,
+    "Longitude": -118.057364,
+    "Source": "diaz-lake"
+  },
+  {
+    "FileName": "diaz-lake-019.jpg",
+    "Latitude": 36.561739,
+    "Longitude": -118.057514,
+    "Source": "diaz-lake"
+  },
+  {
+    "FileName": "diaz-lake-020.jpg",
+    "Latitude": 36.561675,
+    "Longitude": -118.057625,
+    "Source": "diaz-lake"
+  },
+  {
+    "FileName": "diaz-lake-021.jpg",
+    "Latitude": 36.561658,
+    "Longitude": -118.057528,
+    "Source": "diaz-lake"
+  },
+  {
+    "FileName": "diaz-lake-022.jpg",
+    "Latitude": 36.561764,
+    "Longitude": -118.058008,
+    "Source": "diaz-lake"
+  },
+  {
+    "FileName": "diaz-lake-023.jpg",
+    "Latitude": 36.561764,
+    "Longitude": -118.058008,
+    "Source": "diaz-lake"
+  },
+  {
+    "FileName": "diaz-lake-024.jpg",
+    "Latitude": 36.561772,
+    "Longitude": -118.058008,
+    "Source": "diaz-lake"
+  },
+  {
+    "FileName": "diaz-lake-025.jpg",
+    "Latitude": 36.561219,
+    "Longitude": -118.05805,
+    "Source": "diaz-lake"
+  },
+  {
+    "FileName": "diaz-lake-026.jpg",
+    "Latitude": 36.56115,
+    "Longitude": -118.058072,
+    "Source": "diaz-lake"
+  },
+  {
+    "FileName": "hwy-395-001.jpg",
+    "Latitude": 35.453575,
+    "Longitude": -118.164272,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-002.jpg",
+    "Latitude": 36.458194,
+    "Longitude": -117.968289,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-003.jpg",
+    "Latitude": 35.758997,
+    "Longitude": -117.870553,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-004.jpg",
+    "Latitude": 35.883525,
+    "Longitude": -117.866661,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-005.jpg",
+    "Latitude": 35.889689,
+    "Longitude": -117.84445,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-006.jpg",
+    "Latitude": 38.105708,
+    "Longitude": -119.177453,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-007.jpg",
+    "Latitude": 38.105708,
+    "Longitude": -119.177453,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-008.jpg",
+    "Latitude": 38.074072,
+    "Longitude": -119.176881,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-009.jpg",
+    "Latitude": 38.074072,
+    "Longitude": -119.176894,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-010.jpg",
+    "Latitude": 38.074072,
+    "Longitude": -119.176894,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-011.jpg",
+    "Latitude": 38.074072,
+    "Longitude": -119.176894,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-012.jpg",
+    "Latitude": 38.074072,
+    "Longitude": -119.176894,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-013.jpg",
+    "Latitude": 38.074072,
+    "Longitude": -119.176889,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-014.jpg",
+    "Latitude": 38.074047,
+    "Longitude": -119.176889,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-015.jpg",
+    "Latitude": 38.074047,
+    "Longitude": -119.176889,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-016.jpg",
+    "Latitude": 38.074047,
+    "Longitude": -119.176889,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-017.jpg",
+    "Latitude": 38.074017,
+    "Longitude": -119.176925,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-018.jpg",
+    "Latitude": 38.074017,
+    "Longitude": -119.176925,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-019.jpg",
+    "Latitude": 38.074017,
+    "Longitude": -119.176925,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-020.jpg",
+    "Latitude": 35.967486,
+    "Longitude": -117.918642,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-021.jpg",
+    "Latitude": 35.969964,
+    "Longitude": -117.917186,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-022.jpg",
+    "Latitude": 35.972578,
+    "Longitude": -117.919567,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-023.jpg",
+    "Latitude": 35.975994,
+    "Longitude": -117.920556,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-024.jpg",
+    "Latitude": 35.968703,
+    "Longitude": -117.915894,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-025.jpg",
+    "Latitude": 36.168792,
+    "Longitude": -118.082617,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-026.jpg",
+    "Latitude": 36.584336,
+    "Longitude": -118.082942,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-027.jpg",
+    "Latitude": 36.584353,
+    "Longitude": -118.082942,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "hwy-395-028.jpg",
+    "Latitude": 36.584344,
+    "Longitude": -118.083006,
+    "Source": "hwy-395"
+  },
+  {
+    "FileName": "mammoth-area-030.jpg",
+    "Latitude": 37.575014,
+    "Longitude": -118.976292,
+    "Source": "mammoth-area"
+  },
+  {
+    "FileName": "mammoth-area-031.jpg",
+    "Latitude": 37.569714,
+    "Longitude": -118.973164,
+    "Source": "mammoth-area"
+  },
+  {
+    "FileName": "mammoth-area-032.jpg",
+    "Latitude": 37.566811,
+    "Longitude": -118.969533,
+    "Source": "mammoth-area"
+  },
+  {
+    "FileName": "mammoth-area-033.jpg",
+    "Latitude": 37.562625,
+    "Longitude": -118.963956,
+    "Source": "mammoth-area"
+  },
+  {
+    "FileName": "mammoth-area-034.jpg",
+    "Latitude": 37.562231,
+    "Longitude": -118.964175,
+    "Source": "mammoth-area"
+  },
+  {
+    "FileName": "mammoth-area-035.jpg",
+    "Latitude": 37.556892,
+    "Longitude": -118.963253,
+    "Source": "mammoth-area"
+  },
+  {
+    "FileName": "mammoth-area-036.jpg",
+    "Latitude": 37.556931,
+    "Longitude": -118.963092,
+    "Source": "mammoth-area"
+  },
+  {
+    "FileName": "mammoth-area-037.jpg",
+    "Latitude": 37.567008,
+    "Longitude": -118.969739,
+    "Source": "mammoth-area"
+  },
+  {
+    "FileName": "mammoth-area-038.jpg",
+    "Latitude": 37.566833,
+    "Longitude": -118.970839,
+    "Source": "mammoth-area"
+  },
+  {
+    "FileName": "mammoth-area-039.jpg",
+    "Latitude": 37.651283,
+    "Longitude": -119.037772,
+    "Source": "mammoth-area"
+  },
+  {
+    "FileName": "mammoth-area-040.jpg",
+    "Latitude": 37.746286,
+    "Longitude": -119.101183,
+    "Source": "mammoth-area"
+  },
+  {
+    "FileName": "mammoth-area-041.jpg",
+    "Latitude": 37.746286,
+    "Longitude": -119.101183,
+    "Source": "mammoth-area"
+  },
+  {
+    "FileName": "mammoth-area-042.jpg",
+    "Latitude": 37.746286,
+    "Longitude": -119.101183,
+    "Source": "mammoth-area"
+  },
+  {
+    "FileName": "mammoth-area-043.jpg",
+    "Latitude": 37.746286,
+    "Longitude": -119.101183,
+    "Source": "mammoth-area"
+  },
+  {
+    "FileName": "mammoth-area-044.jpg",
+    "Latitude": 37.746286,
+    "Longitude": -119.101183,
+    "Source": "mammoth-area"
+  },
+  {
+    "FileName": "mammoth-area-045.jpg",
+    "Latitude": 37.627903,
+    "Longitude": -119.084525,
+    "Source": "mammoth-area"
+  },
+  {
+    "FileName": "mammoth-area-046.jpg",
+    "Latitude": 37.601456,
+    "Longitude": -119.084525,
+    "Source": "mammoth-area"
+  },
+  {
+    "FileName": "mammoth-area-047.jpg",
+    "Latitude": 37.601456,
+    "Longitude": -119.084525,
+    "Source": "mammoth-area"
+  },
+  {
+    "FileName": "mammoth-area-048.jpg",
+    "Latitude": 37.601456,
+    "Longitude": -119.084525,
+    "Source": "mammoth-area"
+  },
+  {
+    "FileName": "mammoth-area-049.jpg",
+    "Latitude": 37.601489,
+    "Longitude": -119.084525,
+    "Source": "mammoth-area"
+  },
+  {
+    "FileName": "mammoth-area-050.jpg",
+    "Latitude": 37.601539,
+    "Longitude": -119.084525,
+    "Source": "mammoth-area"
+  },
+  {
+    "FileName": "mammoth-area-051.jpg",
+    "Latitude": 37.601678,
+    "Longitude": -119.084525,
+    "Source": "mammoth-area"
+  },
+  {
+    "FileName": "mammoth-area-052.jpg",
+    "Latitude": 37.601767,
+    "Longitude": -119.083575,
+    "Source": "mammoth-area"
+  },
+  {
+    "FileName": "mammoth-area-053.jpg",
+    "Latitude": 37.601764,
+    "Longitude": -119.0853,
+    "Source": "mammoth-area"
+  },
+  {
+    "FileName": "mammoth-area-054.jpg",
+    "Latitude": 37.600336,
+    "Longitude": -118.983644,
+    "Source": "mammoth-area"
+  },
+  {
+    "FileName": "mammoth-area-055.jpg",
+    "Latitude": 37.650292,
+    "Longitude": -118.985308,
+    "Source": "mammoth-area"
+  },
+  {
+    "FileName": "mt-whitney-001.jpg",
+    "Latitude": 36.565903,
+    "Longitude": -118.270269,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-002.jpg",
+    "Latitude": 36.565883,
+    "Longitude": -118.270253,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-003.jpg",
+    "Latitude": 36.565883,
+    "Longitude": -118.270253,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-004.jpg",
+    "Latitude": 36.565872,
+    "Longitude": -118.270242,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-005.jpg",
+    "Latitude": 36.565372,
+    "Longitude": -118.271717,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-006.jpg",
+    "Latitude": 36.565372,
+    "Longitude": -118.271706,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-007.jpg",
+    "Latitude": 36.565344,
+    "Longitude": -118.271811,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-008.jpg",
+    "Latitude": 36.571408,
+    "Longitude": -118.292169,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-009.jpg",
+    "Latitude": 36.589378,
+    "Longitude": -118.238697,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-010.jpg",
+    "Latitude": 36.5891,
+    "Longitude": -118.202897,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-011.jpg",
+    "Latitude": 36.5891,
+    "Longitude": -118.202897,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-012.jpg",
+    "Latitude": 36.587525,
+    "Longitude": -118.238772,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-013.jpg",
+    "Latitude": 36.587242,
+    "Longitude": -118.238772,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-014.jpg",
+    "Latitude": 36.587225,
+    "Longitude": -118.238772,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-015.jpg",
+    "Latitude": 36.587214,
+    "Longitude": -118.238772,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-016.jpg",
+    "Latitude": 36.587214,
+    "Longitude": -118.238772,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-017.jpg",
+    "Latitude": 36.587214,
+    "Longitude": -118.238772,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-018.jpg",
+    "Latitude": 36.587214,
+    "Longitude": -118.238772,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-019.jpg",
+    "Latitude": 36.577769,
+    "Longitude": -118.285264,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-020.jpg",
+    "Latitude": 36.578508,
+    "Longitude": -118.285264,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-021.jpg",
+    "Latitude": 36.578531,
+    "Longitude": -118.292386,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-022.jpg",
+    "Latitude": 36.578528,
+    "Longitude": -118.292386,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-023.jpg",
+    "Latitude": 36.578514,
+    "Longitude": -118.292367,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-024.jpg",
+    "Latitude": 36.578514,
+    "Longitude": -118.292367,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-025.jpg",
+    "Latitude": 36.5786,
+    "Longitude": -118.292031,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-026.jpg",
+    "Latitude": 36.5786,
+    "Longitude": -118.292031,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-027.jpg",
+    "Latitude": 36.575972,
+    "Longitude": -118.291547,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-028.jpg",
+    "Latitude": 36.575333,
+    "Longitude": -118.292814,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-029.jpg",
+    "Latitude": 36.575333,
+    "Longitude": -118.292814,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-030.jpg",
+    "Latitude": 36.576506,
+    "Longitude": -118.292119,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-031.jpg",
+    "Latitude": 36.574144,
+    "Longitude": -118.292119,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-032.jpg",
+    "Latitude": 36.573797,
+    "Longitude": -118.278442,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-033.jpg",
+    "Latitude": 36.563458,
+    "Longitude": -118.239083,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-034.jpg",
+    "Latitude": 36.588978,
+    "Longitude": -118.239156,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-035.jpg",
+    "Latitude": 36.588906,
+    "Longitude": -118.24085,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-036.jpg",
+    "Latitude": 36.586858,
+    "Longitude": -118.240908,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-037.jpg",
+    "Latitude": 36.586833,
+    "Longitude": -118.241047,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-038.jpg",
+    "Latitude": 36.586908,
+    "Longitude": -118.292367,
+    "Source": "mt-whitney"
+  },
+  {
+    "FileName": "mt-whitney-campgrounds-001.jpg",
+    "Latitude": 36.588697,
+    "Longitude": -118.232347,
+    "Source": "mt-whitney-campgrounds"
+  },
+  {
+    "FileName": "mt-whitney-campgrounds-002.jpg",
+    "Latitude": 36.588783,
+    "Longitude": -118.232386,
+    "Source": "mt-whitney-campgrounds"
+  },
+  {
+    "FileName": "mt-whitney-campgrounds-003.jpg",
+    "Latitude": 36.588169,
+    "Longitude": -118.231561,
+    "Source": "mt-whitney-campgrounds"
+  },
+  {
+    "FileName": "mt-whitney-campgrounds-004.jpg",
+    "Latitude": 36.588036,
+    "Longitude": -118.231175,
+    "Source": "mt-whitney-campgrounds"
+  },
+  {
+    "FileName": "mt-whitney-campgrounds-005.jpg",
+    "Latitude": 36.588494,
+    "Longitude": -118.231094,
+    "Source": "mt-whitney-campgrounds"
+  },
+  {
+    "FileName": "mt-whitney-campgrounds-006.jpg",
+    "Latitude": 36.5884,
+    "Longitude": -118.227944,
+    "Source": "mt-whitney-campgrounds"
+  },
+  {
+    "FileName": "mt-whitney-campgrounds-007.jpg",
+    "Latitude": 36.5884,
+    "Longitude": -118.227944,
+    "Source": "mt-whitney-campgrounds"
+  },
+  {
+    "FileName": "mt-whitney-campgrounds-008.jpg",
+    "Latitude": 36.588622,
+    "Longitude": -118.228278,
+    "Source": "mt-whitney-campgrounds"
+  },
+  {
+    "FileName": "mt-whitney-campgrounds-009.jpg",
+    "Latitude": 36.588775,
+    "Longitude": -118.227914,
+    "Source": "mt-whitney-campgrounds"
+  },
+  {
+    "FileName": "mt-whitney-campgrounds-010.jpg",
+    "Latitude": 36.589642,
+    "Longitude": -118.230306,
+    "Source": "mt-whitney-campgrounds"
+  },
+  {
+    "FileName": "mt-whitney-campgrounds-011.jpg",
+    "Latitude": 36.588931,
+    "Longitude": -118.23135,
+    "Source": "mt-whitney-campgrounds"
+  },
+  {
+    "FileName": "mt-whitney-campgrounds-012.jpg",
+    "Latitude": 36.587769,
+    "Longitude": -118.232503,
+    "Source": "mt-whitney-campgrounds"
+  },
+  {
+    "FileName": "mt-whitney-campgrounds-013.jpg",
+    "Latitude": 36.5884,
+    "Longitude": -118.232678,
+    "Source": "mt-whitney-campgrounds"
   },
   {
     "FileName": "ventura-001.jpg",
     "Latitude": 34.263333,
     "Longitude": -119.257828,
-    "Altitude": NaN,
     "Source": "ventura"
   },
   {
     "FileName": "ventura-002.jpg",
     "Latitude": 34.263225,
     "Longitude": -119.257794,
-    "Altitude": NaN,
     "Source": "ventura"
   },
   {
     "FileName": "ventura-003.jpg",
     "Latitude": 34.263367,
     "Longitude": -119.257792,
-    "Altitude": NaN,
     "Source": "ventura"
   },
   {
     "FileName": "ventura-004.jpg",
     "Latitude": 34.263403,
     "Longitude": -119.257783,
-    "Altitude": NaN,
     "Source": "ventura"
   },
   {
     "FileName": "ventura-005.jpg",
     "Latitude": 34.263383,
     "Longitude": -119.257836,
-    "Altitude": NaN,
     "Source": "ventura"
   },
   {
     "FileName": "ventura-006.jpg",
     "Latitude": 34.263303,
     "Longitude": -119.257778,
-    "Altitude": NaN,
     "Source": "ventura"
   },
   {
     "FileName": "ventura-007.jpg",
     "Latitude": 34.26325,
     "Longitude": -119.257786,
-    "Altitude": NaN,
     "Source": "ventura"
   },
   {
     "FileName": "ventura-008.jpg",
     "Latitude": 34.2633,
     "Longitude": -119.257878,
-    "Altitude": NaN,
     "Source": "ventura"
+  },
+  {
+    "FileName": "palmdale-001.jpg",
+    "Latitude": 34.543056,
+    "Longitude": -118.035711,
+    "Source": "palmdale"
+  },
+  {
+    "FileName": "palmdale-002.jpg",
+    "Latitude": 34.542886,
+    "Longitude": -118.035642,
+    "Source": "palmdale"
+  },
+  {
+    "FileName": "palmdale-003.jpg",
+    "Latitude": 34.543219,
+    "Longitude": -118.035778,
+    "Source": "palmdale"
+  },
+  {
+    "FileName": "palmdale-004.jpg",
+    "Latitude": 34.543311,
+    "Longitude": -118.035842,
+    "Source": "palmdale"
+  },
+  {
+    "FileName": "palmdale-005.jpg",
+    "Latitude": 34.543536,
+    "Longitude": -118.035989,
+    "Source": "palmdale"
+  },
+  {
+    "FileName": "palmdale-006.jpg",
+    "Latitude": 34.543547,
+    "Longitude": -118.035964,
+    "Source": "palmdale"
+  },
+  {
+    "FileName": "palmdale-007.jpg",
+    "Latitude": 34.543264,
+    "Longitude": -118.036039,
+    "Source": "palmdale"
+  },
+  {
+    "FileName": "palmdale-008.jpg",
+    "Latitude": 34.5435,
+    "Longitude": -118.035956,
+    "Source": "palmdale"
+  },
+  {
+    "FileName": "palmdale-009.jpg",
+    "Latitude": 34.543556,
+    "Longitude": -118.035964,
+    "Source": "palmdale"
+  },
+  {
+    "FileName": "palmdale-010.jpg",
+    "Latitude": 34.543333,
+    "Longitude": -118.035972,
+    "Source": "palmdale"
+  },
+  {
+    "FileName": "palmdale-011.jpg",
+    "Latitude": 34.543236,
+    "Longitude": -118.036186,
+    "Source": "palmdale"
+  },
+  {
+    "FileName": "palmdale-012.jpg",
+    "Latitude": 34.543078,
+    "Longitude": -118.036217,
+    "Source": "palmdale"
+  },
+  {
+    "FileName": "palmdale-013.jpg",
+    "Latitude": 34.543192,
+    "Longitude": -118.0363,
+    "Source": "palmdale"
+  },
+  {
+    "FileName": "red-rock-canyon-001.jpg",
+    "Latitude": 35.362575,
+    "Longitude": -117.9776306,
+    "Source": "red-rock-canyon"
+  },
+  {
+    "FileName": "red-rock-canyon-002.jpg",
+    "Latitude": 35.36253889,
+    "Longitude": -117.9776556,
+    "Source": "red-rock-canyon"
+  },
+  {
+    "FileName": "red-rock-canyon-003.jpg",
+    "Latitude": 35.36225278,
+    "Longitude": -117.9765972,
+    "Source": "red-rock-canyon"
+  },
+  {
+    "FileName": "red-rock-canyon-004.jpg",
+    "Latitude": 35.36225556,
+    "Longitude": -117.9766083,
+    "Source": "red-rock-canyon"
+  },
+  {
+    "FileName": "south-lake-tahoe-001.jpg",
+    "Latitude": 38.92530556,
+    "Longitude": -120.0539222,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-002.jpg",
+    "Latitude": 38.92312222,
+    "Longitude": -120.0511861,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-003.jpg",
+    "Latitude": 38.92313333,
+    "Longitude": -120.0512083,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-004.jpg",
+    "Latitude": 38.92313611,
+    "Longitude": -120.0512139,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-005.jpg",
+    "Latitude": 38.91899167,
+    "Longitude": -120.0541306,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-006.jpg",
+    "Latitude": 38.93833333,
+    "Longitude": -120.0477139,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-007.jpg",
+    "Latitude": 38.93833333,
+    "Longitude": -120.0477139,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-008.jpg",
+    "Latitude": 38.93833333,
+    "Longitude": -120.0476917,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-009.jpg",
+    "Latitude": 38.93833333,
+    "Longitude": -120.0476306,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-010.jpg",
+    "Latitude": 38.940225,
+    "Longitude": -120.0474,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-011.jpg",
+    "Latitude": 38.94026944,
+    "Longitude": -120.047425,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-012.jpg",
+    "Latitude": 38.94030556,
+    "Longitude": -120.0474167,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-013.jpg",
+    "Latitude": 38.94030556,
+    "Longitude": -120.0474167,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-014.jpg",
+    "Latitude": 38.94035833,
+    "Longitude": -120.0477333,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-015.jpg",
+    "Latitude": 38.94009444,
+    "Longitude": -120.0477056,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-016.jpg",
+    "Latitude": 38.94008056,
+    "Longitude": -120.0476944,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-017.jpg",
+    "Latitude": 38.92510278,
+    "Longitude": -120.0479861,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-018.jpg",
+    "Latitude": 38.92509167,
+    "Longitude": -120.0479333,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-019.jpg",
+    "Latitude": 38.925125,
+    "Longitude": -120.0479306,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-020.jpg",
+    "Latitude": 38.92513889,
+    "Longitude": -120.0479167,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-021.jpg",
+    "Latitude": 38.92512222,
+    "Longitude": -120.0479056,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-022.jpg",
+    "Latitude": 38.92335278,
+    "Longitude": -120.0508972,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-023.jpg",
+    "Latitude": 38.92336111,
+    "Longitude": -120.0508806,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-024.jpg",
+    "Latitude": 38.92336111,
+    "Longitude": -120.0508611,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-025.jpg",
+    "Latitude": 38.92340278,
+    "Longitude": -120.0508222,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-026.jpg",
+    "Latitude": 38.92341667,
+    "Longitude": -120.0508222,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-027.jpg",
+    "Latitude": 38.92791389,
+    "Longitude": -120.0537167,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-028.jpg",
+    "Latitude": 38.92755,
+    "Longitude": -119.9847361,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-029.jpg",
+    "Latitude": 38.94423333,
+    "Longitude": -119.9847056,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-030.jpg",
+    "Latitude": 38.94424722,
+    "Longitude": -119.9847361,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-031.jpg",
+    "Latitude": 38.94470278,
+    "Longitude": -119.9851056,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-032.jpg",
+    "Latitude": 38.94469167,
+    "Longitude": -119.9850944,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-033.jpg",
+    "Latitude": 38.94469722,
+    "Longitude": -119.9851056,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "south-lake-tahoe-034.jpg",
+    "Latitude": 38.92578889,
+    "Longitude": -120.0531056,
+    "Source": "south-lake-tahoe"
+  },
+  {
+    "FileName": "travertine-hot-springs-001.jpg",
+    "Latitude": 38.245631,
+    "Longitude": -119.204239,
+    "Source": "travertine-hot-springs-decimal"
+  },
+  {
+    "FileName": "travertine-hot-springs-002.jpg",
+    "Latitude": 38.245608,
+    "Longitude": -119.204678,
+    "Source": "travertine-hot-springs-decimal"
+  },
+  {
+    "FileName": "travertine-hot-springs-003.jpg",
+    "Latitude": 38.245411,
+    "Longitude": -119.204814,
+    "Source": "travertine-hot-springs-decimal"
+  },
+  {
+    "FileName": "travertine-hot-springs-004.jpg",
+    "Latitude": 38.245381,
+    "Longitude": -119.205283,
+    "Source": "travertine-hot-springs-decimal"
+  },
+  {
+    "FileName": "travertine-hot-springs-005.jpg",
+    "Latitude": 38.245375,
+    "Longitude": -119.205289,
+    "Source": "travertine-hot-springs-decimal"
+  },
+  {
+    "FileName": "travertine-hot-springs-006.jpg",
+    "Latitude": 38.245597,
+    "Longitude": -119.205869,
+    "Source": "travertine-hot-springs-decimal"
+  },
+  {
+    "FileName": "travertine-hot-springs-007.jpg",
+    "Latitude": 38.245283,
+    "Longitude": -119.2066,
+    "Source": "travertine-hot-springs-decimal"
+  },
+  {
+    "FileName": "travertine-hot-springs-008.jpg",
+    "Latitude": 38.244142,
+    "Longitude": -119.206478,
+    "Source": "travertine-hot-springs-decimal"
+  },
+  {
+    "FileName": "travertine-hot-springs-009.jpg",
+    "Latitude": 38.24415,
+    "Longitude": -119.206486,
+    "Source": "travertine-hot-springs-decimal"
+  },
+  {
+    "FileName": "travertine-hot-springs-010.jpg",
+    "Latitude": 38.245325,
+    "Longitude": -119.205161,
+    "Source": "travertine-hot-springs-decimal"
+  },
+  {
+    "FileName": "travertine-hot-springs-011.jpg",
+    "Latitude": 38.246122,
+    "Longitude": -119.203861,
+    "Source": "travertine-hot-springs-decimal"
+  },
+  {
+    "FileName": "travertine-hot-springs-012.jpg",
+    "Latitude": 38.246142,
+    "Longitude": -119.203875,
+    "Source": "travertine-hot-springs-decimal"
+  },
+  {
+    "FileName": "travertine-hot-springs-013.jpg",
+    "Latitude": 38.246158,
+    "Longitude": -119.203889,
+    "Source": "travertine-hot-springs-decimal"
   }
 ]
