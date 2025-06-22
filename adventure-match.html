@@ -1,1 +1,184 @@
-<!-- adventure-match.html - placeholder for Adventure Match -->
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Find Your Ideal Adventure | The American Backpacker</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .match-hero {
+      background: url('assets/images/duck-lake-trail-1b.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px;
+      position: relative;
+    }
+    .match-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 0;
+    }
+    .match-hero h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 2.8rem;
+    }
+
+    .quiz-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .quiz-section {
+      margin-bottom: 30px;
+    }
+
+    .quiz-section label {
+      display: block;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
+    select, button {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+
+    #match-result {
+      margin-top: 40px;
+      padding: 30px;
+      background: #e9e6e2;
+      border-left: 5px solid #44624a;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      display: none;
+    }
+
+    [data-theme="dark"] #match-result {
+      background: #2a2a2a;
+      color: #fff;
+      border-color: #5d8361;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      color: #fff;
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    [data-theme="dark"] .theme-toggle {
+      color: #eee;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle dark mode">🌓</button>
+
+  <header class="match-hero" role="banner">
+    <h1>Find Your Ideal Adventure</h1>
+  </header>
+
+  <main class="quiz-container section" role="main">
+    <form id="adventureForm" role="form" aria-labelledby="formTitle">
+      <h2 id="formTitle">Adventure Matching Quiz</h2>
+
+      <div class="quiz-section">
+        <label for="pace">What kind of pace do you prefer?</label>
+        <select id="pace" name="pace" required aria-required="true">
+          <option value="">-- Select --</option>
+          <option value="slow">Relaxed and scenic</option>
+          <option value="moderate">Some activity, but not extreme</option>
+          <option value="fast">I want a challenge!</option>
+        </select>
+      </div>
+
+      <div class="quiz-section">
+        <label for="duration">How much time can you spend?</label>
+        <select id="duration" name="duration" required aria-required="true">
+          <option value="">-- Select --</option>
+          <option value="half">Half day</option>
+          <option value="full">One full day</option>
+          <option value="overnight">Multi-day</option>
+        </select>
+      </div>
+
+      <div class="quiz-section">
+        <label for="goal">What's your main goal?</label>
+        <select id="goal" name="goal" required aria-required="true">
+          <option value="">-- Select --</option>
+          <option value="heal">Healing or self-reflection</option>
+          <option value="sights">Scenery and photo ops</option>
+          <option value="thrill">Thrill and new terrain</option>
+        </select>
+      </div>
+
+      <button type="submit" aria-label="Submit your adventure quiz">Match Me</button>
+    </form>
+
+    <div id="match-result" role="region" aria-live="polite"></div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <p>&copy; 2025 The American Backpacker</p>
+    <nav aria-label="Footer Navigation">
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="booking.html">Book</a>
+    </nav>
+  </footer>
+
+  <script>
+    const toggleTheme = () => {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    };
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('theme');
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+    });
+
+    document.getElementById('adventureForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const pace = document.getElementById('pace').value;
+      const duration = document.getElementById('duration').value;
+      const goal = document.getElementById('goal').value;
+
+      let match = "Custom Routes – We’ll tailor an experience based on your input.";
+      if (pace === 'slow' && duration === 'half') {
+        match = "Day Hikes – Perfect for easygoing scenic exploration.";
+      } else if (pace === 'moderate' && duration === 'full') {
+        match = "Jeep Tours – Remote access with guided insights.";
+      } else if (pace === 'fast' && duration === 'overnight') {
+        match = "Overnights – Push yourself on a multi-day trek through rugged wilderness.";
+      } else if (goal === 'heal') {
+        match = "Overnights – Designed for reflection, solitude, and healing.";
+      } else if (goal === 'sights') {
+        match = "Jeep Tours – Capture iconic views with ease and comfort.";
+      } else if (goal === 'thrill') {
+        match = "Custom Routes – Designed for challenge and discovery.";
+      }
+
+      const resultDiv = document.getElementById('match-result');
+      resultDiv.innerHTML = `<strong>Your Match:</strong> ${match}`;
+      resultDiv.style.display = 'block';
+      resultDiv.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
