@@ -12,6 +12,7 @@
       background: #f4f1ea;
       color: #3a2e1f;
     }
+
     @media (prefers-color-scheme: dark) {
       body {
         background: #1f1f1f;
@@ -23,48 +24,58 @@
         border: 1px solid #555;
       }
     }
+
     header, footer {
       background: #cbbba0;
       padding: 1em;
       text-align: center;
     }
+
     nav a {
       margin: 0 1em;
       text-decoration: none;
       color: #3a2e1f;
     }
+
     main {
       max-width: 800px;
       margin: 2em auto;
       padding: 0 1em;
     }
+
     form {
       display: flex;
       flex-direction: column;
       gap: 1em;
     }
+
     label {
       font-weight: bold;
     }
+
     input, textarea, select, button {
       font-size: 1rem;
       padding: 0.5em;
       border: 1px solid #d8c9b3;
       border-radius: 6px;
     }
+
     button {
       background-color: #7a5f3c;
       color: white;
       cursor: pointer;
     }
+
     button:hover {
       background-color: #5f452a;
     }
+
     .dark-mode-toggle {
       position: absolute;
       top: 1rem;
       right: 1rem;
     }
+
     .visually-hidden {
       position: absolute !important;
       height: 1px; width: 1px;
@@ -89,7 +100,7 @@
     <h2>Book Your Adventure</h2>
     <p>Please fill out the form below to book your trip. We’ll be in touch with confirmation and next steps.</p>
 
-    <form action=https://formspree.io/f/xanjpwaz method="POST">
+    <form action="https://formspree.io/f/your-form-id" method="POST">
       <label for="name">Full Name</label>
       <input type="text" id="name" name="name" required>
 
@@ -124,9 +135,7 @@
       </label>
       <input type="hidden" name="_captcha" value="false">
 
-      <!-- Redirect after submission -->
       <input type="hidden" name="_redirect" value="thank-you.html">
-
       <button type="submit">Submit Booking</button>
     </form>
   </main>
@@ -136,4 +145,3 @@
   </footer>
 </body>
 </html>
-
