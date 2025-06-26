@@ -1,1 +1,235 @@
-<!-- guides.html - placeholder for Guides -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meet the Guides – The American Backpacker</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/darkmode.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div id="navbar"></div>
+  <script>
+    fetch("nav.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+      });
+  </script>
+
+  <!-- Dark Mode Toggle -->
+  <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌓</button>
+  <script>
+    const toggle = document.getElementById("dark-mode-toggle");
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+    });
+  </script>
+
+  <!-- Hero Section -->
+  <section class="hero" style="background-image: url('assets/images/guides/whitney-group-hike-1b.jpg');">
+    <div class="overlay">
+      <h1>Meet Our Guides</h1>
+      <p>Explore unforgettable landscapes with passionate, experienced guides.</p>
+    </div>
+  </section>
+
+  <!-- Main Guide -->
+  <section class="container">
+    <div class="guide-card">
+      <img src="assets/images/guides/duck-lake-pass.jpg" alt="Adrian at Duck Lake Pass" />
+      <div class="guide-info">
+        <h2>Adrian – Lead Sierra Guide</h2>
+        <p>With years of experience exploring the rugged trails, alpine lakes, and granite peaks of the Sierra Nevada and Southwest, Adrian brings a deep passion and knowledge to every hike. From summiting Mt. Whitney to leading immersive group adventures, he’s known for blending safety, storytelling, and stunning photo ops with top-notch route planning. Whether you're a first-timer or seasoned trekker, you’ll gain skills and memories to last a lifetime.</p>
+        <div class="guide-buttons">
+          <a href="custom_itinerary.html" class="btn">Build Custom Itinerary</a>
+          <a href="booking.html" class="btn secondary">Book a Guide</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guest Guides -->
+  <section class="container">
+    <h2 style="text-align: center;">Our Guest Guides</h2>
+    <div class="guide-grid">
+
+      <!-- Kayla -->
+      <div class="guide-card guest">
+        <img src="assets/images/guides/kayla.jpg" alt="Kayla – Guest Guide" />
+        <div class="guide-info">
+          <h3>Kayla – Desert Hikes & Photography</h3>
+          <p>Kayla specializes in scenic hikes through red rock landscapes and natural arches. Her eye for composition and calm presence make her perfect for guided photo tours and solo-friendly hikes.</p>
+        </div>
+      </div>
+
+      <!-- Lin -->
+      <div class="guide-card guest">
+        <img src="assets/images/guides/lin.jpg" alt="Lin – Guest Guide" />
+        <div class="guide-info">
+          <h3>Lin – Wellness & Nature Retreats</h3>
+          <p>Lin brings a warm, intuitive presence to every outing, combining light hiking with yoga, meditation, and restorative connection to nature. Perfect for small group retreats and mindful escapes.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="container">
+    <h2 style="text-align: center;">Have a Question? Contact Us</h2>
+    <form action="contact.html" method="get" class="guide-form" aria-label="Guide inquiry form">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" rows="5" required placeholder="Ask about specific guides, custom trips, or logistics..."></textarea>
+
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Styles -->
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      line-height: 1.6;
+      background: #fefae0;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+    .dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+    .hero {
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero .overlay {
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 2rem;
+      width: 100%;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    .guide-card {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    .guide-card img {
+      max-width: 100%;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .guide-info {
+      flex: 1;
+    }
+    .guide-info h2, .guide-info h3 {
+      margin-top: 0;
+    }
+    .guide-buttons {
+      margin-top: 1rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.25rem;
+      margin-right: 1rem;
+      background: #bc6c25;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    .btn.secondary {
+      background: #dda15e;
+      color: black;
+    }
+    #dark-mode-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .guide-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .guide-card.guest {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    /* Contact Form */
+    .guide-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 600px;
+      margin: 2rem auto;
+    }
+    .guide-form input,
+    .guide-form textarea {
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .guide-form button {
+      background: #bc6c25;
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .dark-mode .guide-form input,
+    .dark-mode .guide-form textarea {
+      background: #1f1f1f;
+      color: white;
+      border: 1px solid #555;
+    }
+
+    @media (max-width: 768px) {
+      .guide-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .btn {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0.5rem;
+      }
+    }
+  </style>
+
+</body>
+</html>
+
