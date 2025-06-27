@@ -1,1 +1,102 @@
-<!-- sustainability.html - placeholder for Sustainability -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sustainability | The American Backpacker</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    body {
+      background: url('assets/images/diaz-lake-005.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+    main {
+      background: rgba(0, 0, 0, 0.75);
+      padding: 2rem;
+      border-radius: 1rem;
+      max-width: 900px;
+      margin: 2rem auto;
+    }
+    h1, h2 {
+      color: #facc15;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+    form input, form textarea, form button {
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div id="nav-placeholder"></div>
+  <script>fetch('nav.html').then(res => res.text()).then(data => document.getElementById('nav-placeholder').innerHTML = data);</script>
+
+  <main>
+    <h1>Our Commitment to Sustainability</h1>
+    <p>
+      At <strong>The American Backpacker</strong>, we believe that every adventure should help preserve the wild places we love.
+      From minimizing impact on fragile ecosystems to supporting local conservation efforts, we integrate sustainable practices in every step of our journey.
+    </p>
+
+    <h2>What We're Doing</h2>
+    <ul>
+      <li>Leave No Trace ethics on all guided trips</li>
+      <li>Use of eco-friendly gear and reusable cookware</li>
+      <li>Partnering with local trail restoration programs</li>
+      <li>Carbon offset contributions from each trip booked</li>
+      <li>Support for Indigenous stewardship and cultural protection</li>
+    </ul>
+
+    <h2>How You Can Help</h2>
+    <ul>
+      <li>Pack in, pack out — even small trash like wrappers</li>
+      <li>Use refillable water bottles and avoid single-use plastics</li>
+      <li>Respect wildlife and never veer off-trail</li>
+      <li>Join our seasonal clean-up hikes</li>
+      <li>Consider our sustainability-focused membership tier</li>
+    </ul>
+
+    <h2>Inspiration</h2>
+    <p>
+      "We do not inherit the earth from our ancestors, we borrow it from our children."
+      <br><em>– Native American Proverb</em>
+    </p>
+
+    <h2>Support Our Work</h2>
+    <p>We partner with conservation non-profits, native land alliances, and backcountry advocacy groups.</p>
+    <ul>
+      <li><a href="https://www.packfoundation.org" target="_blank">Pack Foundation</a></li>
+      <li><a href="https://native-land.ca" target="_blank">Native Land Digital</a></li>
+      <li><a href="https://www.calwild.org" target="_blank">CalWild</a></li>
+    </ul>
+
+    <h2>Seasonal Project Signup</h2>
+    <form action="#" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <textarea name="message" placeholder="Tell us how you'd like to help..." rows="4" required></textarea>
+      <button type="submit">Sign Up</button>
+    </form>
+  </main>
+
+  <footer>
+    Last updated: June 27, 2025<br>
+    &copy; 2025 The American Backpacker
+  </footer>
+</body>
+</html>

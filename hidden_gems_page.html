@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hidden Gems – The American Backpacker</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/darkmode.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <style>
+    .hero {
+      height: 60vh;
+      background-image: url('assets/images/cottonwood-campgrounds-040.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .hero h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 3rem;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+    .gem {
+      margin-bottom: 2.5rem;
+    }
+    .gem img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .gem h2 {
+      margin-top: 1rem;
+    }
+    .badges span {
+      margin-right: 0.5rem;
+      font-size: 1.2rem;
+    }
+    #map {
+      height: 400px;
+      margin: 2rem 0;
+      border-radius: 10px;
+    }
+    .form-section {
+      background: #fefae0;
+      padding: 2rem;
+      border-radius: 10px;
+      margin-top: 3rem;
+    }
+    .form-section h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .form-section form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 600px;
+      margin: auto;
+    }
+    .form-section input,
+    .form-section textarea {
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .form-section button {
+      background: #bc6c25;
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .downloads {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .downloads a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      background: #dda15e;
+      color: black;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="navbar"></div>
+  <script>
+    fetch("nav.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+      });
+  </script>
+
+  <section class="hero">
+    <h1>Hidden Gems of the Sierra & Beyond</h1>
+  </section>
+
+  <section class="container">
+    <p>Here are some of our favorite lesser-known locations — perfect for those who crave solitude, scenery, and something off the beaten path. Tap each gem to view images, coordinates, and what makes it special.</p>
+
+    <div id="map"></div>
+
+    <!-- Cottonwood Pass Campground -->
+    <div class="gem">
+      <img src="assets/images/cottonwood-campgrounds-035.jpg" alt="Cottonwood Campgrounds">
+      <h2>Cottonwood Pass Trailhead Campground</h2>
+      <p>A peaceful base camp surrounded by high desert pines. Great for acclimation hikes and stargazing.</p>
+      <div class="badges"><span>🏕️ Camping</span><span>💎 Hidden Gem</span></div>
+      <img src="assets/images/cottonwood-campgrounds-036.jpg" alt="Cottonwood Trailhead Detail">
+    </div>
+
+    <!-- Mammoth Area -->
+    <div class="gem">
+      <img src="assets/images/mammoth-area-029.jpg" alt="Mammoth Area Lake">
+      <h2>High Meadows Above Mammoth</h2>
+      <p>Alpine lakes, grassy slopes, and lesser-trafficked trails around Mammoth make this area a dream for photographers and day hikers.</p>
+      <div class="badges"><span>🥾 Hiking</span><span>🎣 Fishing</span><span>💎 Hidden Gem</span></div>
+      <img src="assets/images/mammoth-area-032.jpg" alt="Mammoth Hidden Lake">
+      <img src="assets/images/mammoth-area-035.jpg" alt="Mammoth Scenic View">
+    </div>
+
+    <!-- Travertine Hot Springs -->
+    <div class="gem">
+      <img src="assets/images/travertine-hot-springs-004.jpg" alt="Travertine Hot Springs">
+      <h2>Travertine Hot Springs</h2>
+      <p>A natural spa experience near Bridgeport with jaw-dropping views and warm mineral waters tucked into stone basins.</p>
+      <div class="badges"><span>♨️ Hot Springs</span><span>💎 Hidden Gem</span></div>
+      <img src="assets/images/travertine-hot-springs-009.jpg" alt="Travertine Pool View">
+    </div>
+
+    <!-- Submit a Gem Form -->
+    <div class="form-section">
+      <h2>Submit Your Hidden Gem</h2>
+      <form action="https://formspree.io/f/yourformid" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="text" name="location" placeholder="Gem Name or Coordinates" required>
+        <textarea name="description" rows="5" placeholder="Tell us what makes this place special..." required></textarea>
+        <button type="submit">Submit Gem</button>
+      </form>
+    </div>
+
+    <!-- Downloadable Maps -->
+    <div class="downloads">
+      <h2>Download Offline Map Files</h2>
+      <a href="assets/downloads/hidden-gems.csv" download>📄 Download CSV</a>
+      <a href="assets/downloads/hidden-gems.kml" download>🗺️ Download KML</a>
+      <a href="assets/downloads/hidden-gems.gpx" download>📍 Download GPX</a>
+    </div>
+
+  </section>
+
+  <script>
+    const map = L.map('map').setView([37.0, -118.5], 7);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    const gems = [
+      {
+        name: "Cottonwood Pass Trailhead Campground",
+        coords: [36.447807, -118.169234],
+        popup: "<strong>Cottonwood Campground</strong><br>🏕️ Camping, 💎 Hidden Gem"
+      },
+      {
+        name: "High Meadows Above Mammoth",
+        coords: [37.551460, -118.956386],
+        popup: "<strong>Mammoth Area</strong><br>🥾 Hiking, 🎣 Fishing, 💎 Hidden Gem"
+      },
+      {
+        name: "Travertine Hot Springs",
+        coords: [38.244620, -119.207421],
+        popup: "<strong>Travertine Hot Springs</strong><br>♨️ Hot Springs, 💎 Hidden Gem"
+      }
+    ];
+
+    gems.forEach(gem => {
+      L.marker(gem.coords).addTo(map)
+        .bindPopup(gem.popup);
+    });
+  </script>
+
+</body>
+</html>

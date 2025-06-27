@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="The American Backpacker" xmlns="http://www.topografix.com/GPX/1/1">
+
+  <wpt lat="36.447807" lon="-118.169234">
+    <name>Cottonwood Pass Trailhead Campground</name>
+    <desc>Peaceful base camp with stargazing and acclimation hikes.</desc>
+  </wpt>
+
+  <wpt lat="37.55146" lon="-118.956386">
+    <name>High Meadows Above Mammoth</name>
+    <desc>Alpine lakes, grassy trails, and stunning views near Mammoth.</desc>
+  </wpt>
+
+  <wpt lat="38.24462" lon="-119.207421">
+    <name>Travertine Hot Springs</name>
+    <desc>Natural stone basins with warm mineral water and views.</desc>
+  </wpt>
+</gpx>

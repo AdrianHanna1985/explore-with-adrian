@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+
+  <Placemark>
+    <name>Cottonwood Pass Trailhead Campground</name>
+    <description>Peaceful base camp with stargazing and acclimation hikes.</description>
+    <Point><coordinates>-118.169234,36.447807,0</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+    <name>High Meadows Above Mammoth</name>
+    <description>Alpine lakes, grassy trails, and stunning views near Mammoth.</description>
+    <Point><coordinates>-118.956386,37.55146,0</coordinates></Point>
+  </Placemark>
+
+  <Placemark>
+    <name>Travertine Hot Springs</name>
+    <description>Natural stone basins with warm mineral water and views.</description>
+    <Point><coordinates>-119.207421,38.24462,0</coordinates></Point>
+  </Placemark>
+</Document>
+</kml>

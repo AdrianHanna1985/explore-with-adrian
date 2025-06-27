@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mount Whitney Full-Day Tour</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #eef5ea;
+      color: #234225;
+      margin: 0;
+      padding: 2rem;
+    }
+    .container {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 2rem;
+      max-width: 860px;
+      margin: auto;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+    }
+    h1, h2 {
+      color: #2e5b37;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li::before {
+      content: '🌿';
+      margin-right: 0.5em;
+    }
+    .faq summary {
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 1em;
+    }
+    .testimonial {
+      background: #e5f5e0;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-left: 4px solid #6da968;
+    }
+    .btn {
+      background: #6da968;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 8px;
+      display: inline-block;
+    }
+    #map {
+      height: 400px;
+      margin: 1rem 0;
+      border-radius: 12px;
+    }
+    a {
+      color: #2a6b2a;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Mount Whitney Summit Full-Day Tour</h1>
+    <p>Climb the highest peak in the lower 48 in one epic day! Our expert guide supports your summit bid with pace, safety, and inspiration.</p>
+
+    <h2>Key Facts</h2>
+    <ul>
+      <li>Distance: ~21.4 mi (11 mi one-way)</li>
+      <li>Elevation Gain: ~6,100 ft</li>
+      <li>Trailhead: Whitney Portal – 8,360 ft</li>
+      <li>Summit Elevation: 14,505 ft (4,421 m)</li>
+      <li>Difficulty: Strenuous / Highly Challenging</li>
+      <li>Season: June–September; early/late season may require winter gear</li>
+      <li>Permits: Lottery required between May–Nov (100 day, 60 overnight users daily)</li>
+    </ul>
+
+    <h2>Interactive Route Map</h2>
+    <div id="map"></div>
+    <p>📌 <strong>GPX Overlay</strong> – Map overlay powered via Leaflet GPX plugin, responsive and user-friendly</p>
+
+    <h2>Map & GPX/KML Downloads</h2>
+    <p>📁 <a href="#">Download GPX</a> | <a href="#">Download KML</a></p>
+
+    <h2>Collapsible FAQ</h2>
+    <details class="faq">
+      <summary>❓ When do we start and return?</summary>
+      <p>Typical start time is 10pm the night before. Return expected ~5pm following day.</p>
+    </details>
+    <details class="faq">
+      <summary>❓ What gear do I need?</summary>
+      <p>Headlamp, layers, gloves, trekking poles, snacks, 3+ liters water, electrolyte tablets.</p>
+    </details>
+    <details class="faq">
+      <summary>❓ Are restrooms available?</summary>
+      <p>Toilets at trailhead and Outpost Camp; WAG bags required above 10,000 ft.</p>
+    </details>
+
+    <h2>Testimonials 🌟</h2>
+    <div class="testimonial">“Always thankful for perfect weather… panoramic summit views were awesome.” – Temecula Dan</div>
+    <div class="testimonial">“This is a hike of a lifetime… GPS help recommended.” – FrostyTree8973</div>
+
+    <p><a class="btn" href="booking.html">Book Your Spot</a></p>
+    <footer style="margin-top:2rem;font-size:0.9rem;color:#446544">
+      © 2025 The American Backpacker • Last updated: June 27, 2025
+    </footer>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-gpx/gpx.min.js"></script>
+  <script>
+    const map = L.map('map').setView([36.5785, -118.2923], 12);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    const gpx = '/gpx/whitney.gpx'; // path to your GPX file
+    new L.GPX(gpx, {
+      async: true,
+      marker_options: {
+        startIconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
+        endIconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
+        shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png'
+      }
+    }).on('loaded', function(e) {
+      map.fitBounds(e.target.getBounds());
+    }).addTo(map);
+  </script>
+</body>
+</html>
