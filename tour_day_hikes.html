@@ -1,0 +1,172 @@
+<!-- Full updated tour-day-hikes.html content inserted here -->
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Guided Day Hikes | The American Backpacker</title>
+<link href="styles.css" rel="stylesheet"/>
+<link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet"/>
+<style>
+    body {
+      background: url('assets/images/mt-whitney-009.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .hike-section {
+      background-color: rgba(0, 0, 0, 0.65);
+      margin: 1rem auto;
+      padding: 1rem;
+      border-radius: 10px;
+      max-width: 800px;
+    }
+    .map-container {
+      height: 500px;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+    .collapsible {
+      cursor: pointer;
+      padding: 0.75rem;
+      background-color: #222;
+      color: #fff;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.2rem;
+      width: 100%;
+    }
+    .active, .collapsible:hover {
+      background-color: #444;
+    }
+    .content {
+      padding: 0 1rem;
+      display: none;
+      overflow: hidden;
+    }
+    .filters {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    .filters label {
+      margin-right: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+<nav aria-label="Main navigation">
+<ul class="nav-menu">
+<li><a href="index.html">Home</a></li>
+<li><a href="tours.html">Tours</a></li>
+<li><a href="booking.html">Book</a></li>
+<li><a href="custom-itinerary.html">Itinerary</a></li>
+<li><a href="destination-sierra-nevada.html">Sierra Nevada</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><button onclick="toggleSpanish()">ES</button></li>
+</ul>
+</nav>
+
+<div class="filters">
+<input id="searchInput" placeholder="🔍 Search hikes..." type="text"/>
+<label><input class="tag-filter" type="checkbox" value="Easy"/> Easy</label>
+<label><input class="tag-filter" type="checkbox" value="Moderate"/> Moderate</label>
+<label><input class="tag-filter" type="checkbox" value="Strenuous"/> Strenuous</label>
+<label><input class="tag-filter" type="checkbox" value="Loop"/> 🔁</label>
+<label><input class="tag-filter" type="checkbox" value="Waterfall"/> 💧</label>
+<label><input class="tag-filter" type="checkbox" value="Hot Springs"/> ♨️</label>
+</div>
+<div class="map-container" id="map"></div>
+<div id="hike-list">
+<div class="hike-section" data-tags="Moderate Lakeside Loop">
+<button class="collapsible">Duck Lake Trail ⭐️⭐️⭐️⭐️⭐️</button>
+<div class="content">
+<p>🌄 Lakeside beauty with moderate gain. 🔁 Loop</p>
+<a href="#">📘 Book Now</a> | <a href="#">📥 GPX</a>
+</div>
+</div>
+<div class="hike-section" data-tags="Strenuous Mountain Summit">
+<button class="collapsible">Mount Whitney Trail ⭐️⭐️⭐️⭐️⭐️</button>
+<div class="content">
+<p>⛰️ Strenuous summit to the tallest peak in the lower 48.</p>
+<a href="#">📘 Book Now</a> | <a href="#">📥 KML</a>
+</div>
+</div>
+<div class="hike-section" data-tags="Fall Colors Loop Scenic">
+<button class="collapsible">Lundy Canyon Trail ⭐️⭐️⭐️⭐️</button>
+<div class="content">
+<p>🍂 Waterfalls and aspens. 🔁 Loop, 📸 Scenic</p>
+<a href="#">📘 Book Now</a> | <a href="#">📥 KML</a>
+</div>
+</div>
+<!-- Add 5 more similar hike sections as needed -->
+</div>
+<footer style="text-align: center; padding: 2rem; background-color: rgba(0,0,0,0.7);">
+    © 2025 The American Backpacker • Last updated: June 27, 2025
+  </footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    const collapsibles = document.querySelectorAll('.collapsible');
+    collapsibles.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+        const content = btn.nextElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+
+    // Filter logic
+    const filters = document.querySelectorAll('.tag-filter');
+    const searchInput = document.getElementById('searchInput');
+    const hikeSections = document.querySelectorAll('.hike-section');
+
+    function applyFilters() {
+      const searchText = searchInput.value.toLowerCase();
+      const activeTags = Array.from(filters).filter(f => f.checked).map(f => f.value);
+      hikeSections.forEach(section => {
+        const tags = section.dataset.tags.toLowerCase();
+        const matchesSearch = tags.includes(searchText);
+        const matchesTags = activeTags.every(tag => tags.includes(tag.toLowerCase()));
+        section.style.display = matchesSearch && matchesTags ? 'block' : 'none';
+      });
+    }
+
+    searchInput.addEventListener('input', applyFilters);
+    filters.forEach(f => f.addEventListener('change', applyFilters));
+
+    // Leaflet map and markers
+    const map = L.map('map').setView([36.6, -118.1], 7);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    const hikes = [
+      { name: 'Duck Lake', coords: [37.6, -118.8] },
+      { name: 'Mount Whitney', coords: [36.5786, -118.2923] },
+      { name: 'Lundy Canyon', coords: [38.055, -119.214] }
+    ];
+
+    hikes.forEach(hike => {
+      const marker = L.marker(hike.coords).addTo(map);
+      marker.bindPopup(`<b>${hike.name}</b>`);
+    });
+  </script>
+
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+  }
+  function toggleSpanish() {
+    alert("Spanish toggle coming soon!");
+  }
+</script>
+</body>
+</html>

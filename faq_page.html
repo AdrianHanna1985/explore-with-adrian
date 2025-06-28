@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FAQs | The American Backpacker</title>
+<style>
+    :root {
+      --sunny-blue: #e6f0ff;
+      --golden-aspen: #ffdf80;
+      --mountain-gray: #cccccc;
+      --pine-green: #2e4d34;
+      --dark-mode-bg: #1a1a1a;
+      --dark-mode-text: #f0f0f0;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: linear-gradient(to bottom, var(--sunny-blue), var(--golden-aspen));
+      color: #111;
+      scroll-behavior: smooth;
+    }
+
+    body.dark-mode {
+      background: var(--dark-mode-bg);
+      color: var(--dark-mode-text);
+    }
+
+    header {
+      background: var(--pine-green);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .toggle-dark {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      color: inherit;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100vw;
+      height: 100vh;
+      background: url("/assets/images/hwy-395-013.jpg") no-repeat center center/cover;
+      opacity: 0.2;
+    }
+
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    details {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      margin: 1rem 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    body.dark-mode details {
+      background: #333;
+      color: var(--dark-mode-text);
+    }
+
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+<nav aria-label="Main navigation">
+<ul class="nav-menu">
+<li><a href="index.html">Home</a></li>
+<li><a href="tours.html">Tours</a></li>
+<li><a href="booking.html">Book</a></li>
+<li><a href="custom-itinerary.html">Itinerary</a></li>
+<li><a href="destination-sierra-nevada.html">Sierra Nevada</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><button onclick="toggleSpanish()">ES</button></li>
+</ul>
+</nav>
+
+<div class="background"></div>
+<header>
+<h1>Frequently Asked Questions</h1>
+<button class="toggle-dark" onclick="document.body.classList.toggle('dark-mode')">☀️/🌙</button>
+</header>
+<main>
+<details><summary>What types of trips do you offer?</summary><p>We specialize in guided hikes, scenic tours, and custom itineraries across the American West.</p></details>
+<details><summary>How do I book a tour?</summary><p>Visit our Booking page and fill out the form. We'll follow up via email to confirm.</p></details>
+<details><summary>Can I request a custom itinerary?</summary><p>Absolutely! Use our Custom Itinerary page to tailor your trip preferences.</p></details>
+<details><summary>Do you accommodate solo travelers?</summary><p>Yes, we welcome solo adventurers on all of our tours.</p></details>
+<details><summary>Are your trips pet-friendly?</summary><p>Some are! Check each trip description or contact us for details.</p></details>
+<details><summary>What is your cancellation policy?</summary><p>You can cancel up to 7 days in advance for a full refund.</p></details>
+<details><summary>Do I need prior hiking experience?</summary><p>Nope! We offer beginner to advanced level options.</p></details>
+<details><summary>Are meals included?</summary><p>Some trips include meals—check each itinerary for specifics.</p></details>
+<details><summary>Do you provide gear rentals?</summary><p>Yes, we offer gear rentals as an optional add-on during booking.</p></details>
+<details><summary>Where do we meet for tours?</summary><p>Meeting locations are listed on each trip’s page and confirmed via email.</p></details>
+<details><summary>Is transportation provided?</summary><p>Shuttles are available for select tours—check the trip details or inquire for more info.</p></details>
+<details><summary>Are your guides certified?</summary><p>Yes! Our team includes Wilderness First Responders and experienced local experts.</p></details>
+<details><summary>What’s the group size?</summary><p>We keep it small—most tours range from 4 to 12 people.</p></details>
+<details><summary>Do you offer 360° content?</summary><p>Yes! Many of our tours are documented with 360° photos and videos for you to relive.</p></details>
+<details><summary>Can I bring my drone?</summary><p>Only where legal—National Parks and some public lands prohibit drone use.</p></details>
+<details><summary>Is gratuity included?</summary><p>No, tips are appreciated but never required.</p></details>
+<details><summary>What should I pack?</summary><p>Each trip includes a packing list, but essentials include water, snacks, and layers.</p></details>
+<details><summary>Do you offer gift cards?</summary><p>Yes! Gift an adventure to a friend or loved one through our booking portal.</p></details>
+<details><summary>Can I join last minute?</summary><p>If there's space, yes—reach out via email or social media for availability.</p></details>
+<details><summary>Is your site accessible?</summary><p>We prioritize full accessibility—screen readers, dark mode, and mobile optimization included.</p></details>
+</main>
+
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+  }
+  function toggleSpanish() {
+    alert("Spanish toggle coming soon!");
+  }
+</script>
+</body>
+</html>

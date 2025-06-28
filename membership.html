@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Membership | The American Backpacker</title>
+<link href="assets/styles.css" rel="stylesheet"/>
+<script defer="" src="assets/scripts.js"></script>
+<style>
+    body {
+      background: url('assets/images/diaz-lake-021.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+    .membership-tier {
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 1rem auto;
+      max-width: 600px;
+    }
+    .form-section, .modal {
+      background: rgba(0, 0, 0, 0.85);
+      border-radius: 1rem;
+      padding: 2rem;
+      max-width: 600px;
+      margin: 2rem auto;
+      color: white;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: #222;
+      padding: 2rem;
+      border-radius: 1rem;
+      text-align: center;
+    }
+    .modal button {
+      margin-top: 1rem;
+      padding: 0.5rem 1.5rem;
+      background: #fbbf24;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<nav aria-label="Main navigation">
+<ul class="nav-menu">
+<li><a href="index.html">Home</a></li>
+<li><a href="tours.html">Tours</a></li>
+<li><a href="booking.html">Book</a></li>
+<li><a href="custom-itinerary.html">Itinerary</a></li>
+<li><a href="destination-sierra-nevada.html">Sierra Nevada</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><button onclick="toggleSpanish()">ES</button></li>
+</ul>
+</nav>
+
+<!-- Navbar Include -->
+<div id="nav-placeholder"></div>
+<script>fetch('nav.html').then(res => res.text()).then(data => document.getElementById('nav-placeholder').innerHTML = data);</script>
+<main>
+<section class="membership-tier">
+<h2>Free Explorer</h2>
+<ul>
+<li>Monthly trip updates</li>
+<li>Access to hidden gem maps</li>
+</ul>
+</section>
+<section class="membership-tier">
+<h2>Premium Adventurer – $25/year</h2>
+<ul>
+<li>Early trip signups</li>
+<li>Downloadable GPX/KML map sets</li>
+<li>Member-only video/photo sets</li>
+<li>Custom itinerary advice</li>
+</ul>
+</section>
+<section class="membership-tier">
+<h2>Trail Sponsor – $50/year</h2>
+<ul>
+<li>All Premium perks</li>
+<li>1 free guided planning call</li>
+<li>Custom badge on forum</li>
+<li>Annual postcard from a featured Sierra trail</li>
+</ul>
+</section>
+<section class="form-section">
+<h3>Join the Community</h3>
+<form id="membershipForm">
+<label for="name">Name</label>
+<input id="name" name="name" required="" type="text"/><br/>
+<label for="email">Email</label>
+<input id="email" name="email" required="" type="email"/><br/>
+<label for="interest">Interest</label>
+<select id="interest" name="interest">
+<option value="explorer">Free Explorer</option>
+<option value="premium">Premium Adventurer</option>
+<option value="sponsor">Trail Sponsor</option>
+</select><br/>
+<button type="submit">Sign Up</button>
+</form>
+</section>
+<!-- Modal -->
+<div class="modal" id="thankYouModal">
+<div class="modal-content">
+<h2>🎉 Thanks for Joining!</h2>
+<p>You're now on your way to exploring more trails, hidden gems, and exclusive member content.<br/> We’ll be in touch soon — keep an eye on your inbox! 👀</p>
+<button onclick="document.getElementById('thankYouModal').style.display='none'">Close</button>
+</div>
+</div>
+</main>
+<script>
+    document.getElementById('membershipForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      document.getElementById('thankYouModal').style.display = 'flex';
+    });
+  </script>
+
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+  }
+  function toggleSpanish() {
+    alert("Spanish toggle coming soon!");
+  }
+</script>
+</body>
+</html>
