@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Gift Cards | The American Backpacker
+  </title>
+  <link href="styles.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/a076d05399.js">
+  </script>
+  <style>
+   body, html {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    .dark-mode {
+      background-color: #0f1d2d;
+      color: #f0f0f0;
+    }
+
+    .parallax {
+      background-image: url('/assets/images/giftcards/mammoth-area-034.jpg');
+      height: 100vh;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .overlay {
+      background: linear-gradient(to bottom, rgba(8,24,44,0.85), rgba(26,44,58,0.88), rgba(57,79,87,0.95));
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      background: linear-gradient(180deg, #263747, #3e545f, #69888f);
+      color: #fff;
+    }
+
+    .gift-card-icon {
+      font-size: 3rem;
+      color: #ffcc70;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      background: #ffcc70;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 8px;
+      color: #0f1d2d;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #ffd98c;
+    }
+
+    .dark-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: #fff;
+      border-radius: 50%;
+      padding: 0.5rem;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    @media (max-width: 768px) {
+      .parallax {
+        background-attachment: scroll;
+      }
+    }
+  </style>
+ </head>
+ <body>
+  <div id="nav-placeholder"></div>
+<script>
+  fetch("nav.html").then(res => res.text()).then(data => {
+    document.getElementById("nav-placeholder").innerHTML = data;
+  });
+</script>
+  <div class="dark-toggle" onclick="document.body.classList.toggle('dark-mode')">
+   <i class="fas fa-adjust">
+   </i>
+  </div>
+  <div class="parallax">
+   <div class="overlay">
+   </div>
+   <div class="content">
+    <h1>
+     Give the Gift of Adventure
+    </h1>
+    <p>
+     Perfect for birthdays, holidays, or just because. Let someone explore the American West with you.
+    </p>
+   </div>
+  </div>
+  <div class="section">
+   <i class="fas fa-gift gift-card-icon">
+   </i>
+   <h2>
+    Buy a Gift Card Now
+   </h2>
+   <p>
+    Gift cards can be applied toward any custom trip, 360° experience, or guided adventure. Sent instantly by email.
+   </p>
+   <button onclick="window.location.href='mailto:info@americanbackpacker.com?subject=Gift%20Card%20Request'">
+    Request Gift Card
+   </button>
+  </div>
+  <div class="section">
+   <h2>
+    Why Choose Our Gift Cards?
+   </h2>
+   <ul style="list-style: none; padding: 0; max-width: 600px; margin: auto;">
+    <li>
+     <i class="fas fa-mountain">
+     </i>
+     Access to breathtaking National Parks and hidden gems
+    </li>
+    <li>
+     <i class="fas fa-hiking">
+     </i>
+     Custom adventures tailored to every skill level
+    </li>
+    <li>
+     <i class="fas fa-camera-retro">
+     </i>
+     360° media options for immersive experiences
+    </li>
+    <li>
+     <i class="fas fa-users">
+     </i>
+     Great for solo travelers, couples, and families
+    </li>
+   </ul>
+  </div>
+  <script>
+   function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+  }
+  function toggleSpanish() {
+    alert("Spanish toggle coming soon!");
+  }
+  </script>
+ </body>
+</html>

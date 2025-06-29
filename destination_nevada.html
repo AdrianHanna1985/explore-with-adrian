@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Explore Nevada
+  </title>
+  <link href="styles.css" rel="stylesheet"/>
+  <style>
+   body {
+      background: url('boulder-beach.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: white;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      padding: 1rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    nav {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .description {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .map-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    iframe {
+      border: 0;
+      width: 90vw;
+      height: 75vh;
+      max-width: 1000px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .description {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
+    }
+  </style>
+ </head>
+ <body>
+  <div id="nav-placeholder"></div>
+<script>
+  fetch("nav.html").then(res => res.text()).then(data => {
+    document.getElementById("nav-placeholder").innerHTML = data;
+  });
+</script>
+  <div class="overlay">
+   <header>
+    <h1>
+     Explore Nevada
+    </h1>
+   </header>
+   <div id="nav-placeholder"></div>
+<script>
+  fetch("nav.html").then(res => res.text()).then(data => {
+    document.getElementById("nav-placeholder").innerHTML = data;
+  });
+</script>
+   <div class="description">
+    Discover the beauty of Nevada's diverse landscape. From red rock canyons to desert lakes, tribal sites to hot springs, Nevada has something for every adventurer. Tap the interactive map below to plan your perfect trip.
+   </div>
+   <div class="map-container">
+    <iframe allowfullscreen="" src="https://www.google.com/maps/d/embed?mid=1Dbt6rSgOe_M10ZPsgHkvkjNX4847N0A&amp;ehbc=2E312F">
+    </iframe>
+   </div>
+  </div>
+  <script>
+   function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+  }
+  function toggleSpanish() {
+    alert("Spanish toggle coming soon!");
+  }
+  </script>
+ </body>
+</html>

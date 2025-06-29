@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Interactive Map Gallery | The American Backpacker
+  </title>
+  <link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet"/>
+  <link href="https://unpkg.com/photo-sphere-viewer@5/dist/photo-sphere-viewer.css" rel="stylesheet"/>
+  <script src="https://unpkg.com/uevent@2/browser.js">
+  </script>
+  <script src="https://unpkg.com/three@0.152.2/build/three.min.js">
+  </script>
+  <script src="https://unpkg.com/photo-sphere-viewer@5/dist/photo-sphere-viewer.js">
+  </script>
+  <script src="https://unpkg.com/photo-sphere-viewer@5/dist/plugins/gyroscope.js">
+  </script>
+  <style>
+   .media-label {
+      font-size: 0.75rem;
+      padding: 0.3rem;
+      color: #ccc;
+      text-align: center;
+    }
+    html, body {
+      margin: 0;
+      height: 100%;
+      font-family: sans-serif;
+      background-color: #121212;
+      color: #fff;
+    }
+    #map {
+      width: 100%;
+      height: 60vh;
+      z-index: 0;
+    }
+    .gallery {
+      display: flex;
+      overflow-x: auto;
+      padding: 1rem;
+      background-color: #1e1e1e;
+    }
+    .media-item {
+      margin-right: 10px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #000;
+    }
+    .media-item img, .media-item video {
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .filter {
+      padding: 1rem;
+      background-color: #222;
+      text-align: center;
+    }
+    select {
+      padding: 0.5rem;
+      background: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+ </head>
+ <body>
+  <div id="nav-placeholder"></div>
+<script>
+  fetch("nav.html").then(res => res.text()).then(data => {
+    document.getElementById("nav-placeholder").innerHTML = data;
+  });
+</script>
+  <div id="nav-placeholder">
+  </div>
+  <div id="map">
+  </div>
+  <div class="filter">
+   <label for="tripFilter">
+    Filter by Trip:
+   </label>
+   <select id="tripFilter">
+    <option value="all">
+     All
+    </option>
+   </select>
+  </div>
+  <div class="gallery" id="gallery">
+  </div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+  </script>
+  <script>
+   // Load shared nav menu dynamically
+    fetch('nav.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('nav-placeholder').innerHTML = data;
+      });
+
+    const map = L.map('map').setView([36.6, -118.1], 7);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    const imageData = [];
+    const markers = [];
+
+    function populateMap(data) {
+      markers.forEach(marker => map.removeLayer(marker));
+      document.getElementById('gallery').innerHTML = '';
+
+      data.forEach(item => {
+        const marker = L.marker([item.Latitude, item.Longitude]).addTo(map)
+          .bindPopup(`<strong>${item.FileName}</strong><br><em>${item.Source}</em><br>${item.Altitude || ''}`);
+        markers.push(marker);
+
+        const container = document.createElement('div');
+        container.className = 'media-item';
+
+        if (item.FileName.match(/\.(mp4|webm)$/i)) {
+          container.innerHTML = `
+  <video src="./assets/images/${item.Source}/${item.FileName}" controls muted></video>
+  <div class="media-label"><strong>${item.Source}</strong><br>${item.Latitude.toFixed(4)}, ${item.Longitude.toFixed(4)}</div>
+`;
+        } else if (item.FileName.match(/\.360\.jpg$/i)) {
+          container.innerHTML = `
+  <img src="./assets/images/${item.Source}/${item.FileName}" alt="360 View" title="360 Photo" />
+  <div class="media-label">${item.FileName}<br>${item.Source} • ${item.Altitude || '—'} m</div>
+`;
+        } else {
+          container.innerHTML = `
+  <img src="./assets/images/${item.Source}/${item.FileName}" alt="${item.FileName}" />
+  <div class="media-label">${item.FileName}<br>${item.Source} • ${item.Altitude || '—'} m</div>
+`;
+        }
+        document.getElementById('gallery').appendChild(container);
+      });
+    }
+
+    function populateFilter(trips) {
+      const filter = document.getElementById('tripFilter');
+      trips.forEach(source => {
+        const opt = document.createElement('option');
+        opt.value = source;
+        opt.textContent = source;
+        filter.appendChild(opt);
+      });
+    }
+
+    fetch('./all_image_data.json')
+      .then(res => res.json())
+      .then(data => {
+        imageData.push(...data);
+        const sources = [...new Set(data.map(d => d.Source))];
+        populateFilter(sources);
+        populateMap(data);
+
+        document.getElementById('tripFilter').addEventListener('change', e => {
+          const val = e.target.value;
+          if (val === 'all') populateMap(imageData);
+          else populateMap(imageData.filter(d => d.Source === val));
+        });
+      });
+  </script>
+  <div id="psv-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; background:#000;">
+  </div>
+  <script>
+   const viewerContainer = document.getElementById('psv-modal');
+  let psv;
+
+  document.addEventListener('click', function (e) {
+    if (e.target.tagName === 'IMG' && e.target.src.includes('.360')) {
+      e.preventDefault();
+      viewerContainer.style.display = 'block';
+
+      if (psv) {
+        psv.setPanorama(e.target.src);
+      } else {
+      psv = new PhotoSphereViewer.Viewer({
+  container: viewerContainer,
+  panorama: e.target.src,
+  loadingImg: 'https://photo-sphere-viewer.js.org/assets/photosphere-logo.gif',
+  navbar: ['zoom', 'fullscreen', 'gyroscope', 'close'],
+  usexmpdata: false,
+  touchmoveTwoFingers: false,
+  mousewheel: true,
+  defaultYaw: 0,
+        requestFullscreen: /Mobi|Android/i.test(navigator.userAgent),
+  plugins: [
+    [PhotoSphereViewer.GyroscopePlugin],
+  ],
+});
+        psv.once('ready', () => {
+  viewerContainer.focus();
+
+  if (window.DeviceOrientationEvent && typeof DeviceOrientationEvent.requestPermission === 'function') {
+    DeviceOrientationEvent.requestPermission().catch(() => {
+      alert('Enable motion access in browser settings to use gyroscope control.');
+    });
+  }
+});
+    document.addEventListener('keydown', (event) => {
+  if (!psv) return;
+
+  switch (event.key) {
+    case 'f':
+      psv.enterFullscreen();
+      break;
+    case 'g':
+      const gyro = psv.getPlugin(PhotoSphereViewer.GyroscopePlugin);
+      if (gyro) gyro.toggle();
+      break;
+    case 'Escape':
+      viewerContainer.style.display = 'none';
+      break;
+    case 'ArrowLeft':
+      psv.rotate({
+        yaw: psv.getPosition().yaw - 0.1,
+        pitch: psv.getPosition().pitch,
+      });
+      break;
+    case 'ArrowRight':
+      psv.rotate({
+        yaw: psv.getPosition().yaw + 0.1,
+        pitch: psv.getPosition().pitch,
+      });
+      break;
+    case 'ArrowUp':
+      psv.rotate({
+        yaw: psv.getPosition().yaw,
+        pitch: psv.getPosition().pitch + 0.1,
+      });
+      break;
+    case 'ArrowDown':
+      psv.rotate({
+        yaw: psv.getPosition().yaw,
+        pitch: psv.getPosition().pitch - 0.1,
+      });
+      break;
+  }
+});
+
+      }
+
+      psv.once('ready', () => {
+        viewerContainer.focus();
+      });
+
+      psv.once('close', () => {
+        viewerContainer.style.display = 'none';
+      });
+    }
+  });
+
+  // Optional: close viewer if user clicks outside or presses Esc
+  viewerContainer.addEventListener('click', () => viewerContainer.style.display = 'none');
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') viewerContainer.style.display = 'none';
+  });
+  </script>
+  <script>
+   function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+  }
+  function toggleSpanish() {
+    alert("Spanish toggle coming soon!");
+  }
+  </script>
+ </body>
+</html>

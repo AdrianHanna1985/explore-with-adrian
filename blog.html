@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Travertine Hot Springs | The American Backpacker
+  </title>
+  <link href="styles.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div id="nav-placeholder"></div>
+<script>
+  fetch("nav.html").then(res => res.text()).then(data => {
+    document.getElementById("nav-placeholder").innerHTML = data;
+  });
+</script>
+  <header>
+   <h1>
+    The American Backpacker
+   </h1>
+   <div id="nav-placeholder"></div>
+<script>
+  fetch("nav.html").then(res => res.text()).then(data => {
+    document.getElementById("nav-placeholder").innerHTML = data;
+  });
+</script>
+  </header>
+  <main>
+   <article class="blog-post">
+    <h2>
+     Travertine Hot Springs: A Soak with a View
+    </h2>
+    <p class="meta">
+     Posted on June 22, 2025 · By Adrian
+    </p>
+    <p>
+     Just outside Bridgeport, Travertine Hot Springs offers one of the most surreal geothermal experiences in the Eastern Sierra. Natural tubs, a view of the Sawtooth Range, and mineral-stained rocks made this an unforgettable morning soak.
+    </p>
+    <figure>
+     <img alt="Travertine Hot Springs scenic view" src="/assets/images/img_2048.jpg"/>
+     <figcaption>
+      Hot pools framed by snowy mountains
+     </figcaption>
+    </figure>
+    <p>
+     It’s not just the warm water—it’s the silence, the morning steam rising as the sun hits the granite peaks, and the feeling of being both grounded and elevated. Few places deliver this kind of wild peace.
+    </p>
+    <figure>
+     <img alt="Close-up of mineral patterns" src="/assets/images/travertine-closeup.jpg"/>
+     <figcaption>
+      Colorful mineral lines create surreal textures
+     </figcaption>
+    </figure>
+    <p>
+     Getting here was easy with the gravel road just south of Bridgeport. Come early, bring water, and leave no trace. It’s a rare gem—let’s keep it that way.
+    </p>
+    <div class="nav-links">
+     <a href="blog-post.html">
+      ← Previous: Lone Pine &amp; Yosemite
+     </a>
+     <a href="blog-post-south-lake-tahoe.html">
+      Next: South Lake Tahoe →
+     </a>
+    </div>
+   </article>
+  </main>
+  <div id="footer-placeholder"></div>
+<script>
+  fetch("footer.html").then(res => res.text()).then(data => {
+    document.getElementById("footer-placeholder").innerHTML = data;
+  });
+</script>
+  <script>
+   function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+  }
+  function toggleSpanish() {
+    alert("Spanish toggle coming soon!");
+  }
+  </script>
+ </body>
+</html>

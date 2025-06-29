@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Private Tours | The American Backpacker
+  </title>
+  <link href="styles.css" rel="stylesheet"/>
+  <link href="https://unpkg.com/leaflet/dist/leaflet.css" rel="stylesheet"/>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js">
+  </script>
+  <style>
+   body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #e3fcec, #d1f0df, #c3eacb);
+      color: #1b4332;
+    }
+    header, main {
+      padding: 1rem;
+    }
+    .tour-card {
+      background: #ffffffcc;
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1rem 0;
+      border: 1px solid #ccc;
+    }
+    .booking-section {
+      background: #ffffffcc;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-top: 2rem;
+    }
+    .faq details {
+      margin-bottom: 0.5rem;
+    }
+    .faq summary {
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .testimonial {
+      background: #d8f3dc;
+      border-left: 4px solid #40916c;
+      margin: 1rem 0;
+      padding: 1rem;
+      font-style: italic;
+    }
+    #map {
+      height: 400px;
+      width: 100%;
+      margin: 2rem 0;
+    }
+    .form-section {
+      background: #ffffffcc;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+    form label {
+      display: block;
+      margin-top: 0.5rem;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.25rem;
+      border-radius: 4px;
+      border: 1px solid #999;
+    }
+    form button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #74c69d;
+      color: #1b4332;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #1b4332;
+        color: #d8f3dc;
+      }
+      .tour-card, .booking-section, .form-section {
+        background: #2d6a4f;
+        border-color: #95d5b2;
+      }
+      .testimonial {
+        background: #40916c;
+        color: #fff;
+      }
+    }
+  </style>
+ </head>
+ <body>
+  <div id="nav-placeholder"></div>
+<script>
+  fetch("nav.html").then(res => res.text()).then(data => {
+    document.getElementById("nav-placeholder").innerHTML = data;
+  });
+</script>
+  <header>
+   <h1>
+    👣 Private Tours
+   </h1>
+   <p>
+    Customized experiences tailored to your group’s pace, interest, and dream destinations.
+   </p>
+  </header>
+  <main>
+   <section class="tour-card">
+    <h2>
+     Sierra Family Explorer
+    </h2>
+    <p>
+     Private day hikes with picnic stops, family photos, and nature play spots.
+    </p>
+   </section>
+   <section class="tour-card">
+    <h2>
+     Alpine Summit Challenge
+    </h2>
+    <p>
+     Conquer a summit of your choice with one-on-one guide support and flexibility.
+    </p>
+   </section>
+   <section class="tour-card">
+    <h2>
+     Photographer’s Dream Tour
+    </h2>
+    <p>
+     Chase the golden hour through scenic wilderness with time for tripods and creativity.
+    </p>
+   </section>
+   <div id="map">
+   </div>
+   <section class="booking-section">
+    <h2>
+     📅 Book Your Private Tour
+    </h2>
+    <p>
+     Ready for a trip built around *you*? Let's make it happen.
+    </p>
+    <a href="custom-itinerary.html">
+     Start Customizing
+    </a>
+    |
+    <a href="booking.html">
+     Book Now
+    </a>
+   </section>
+   <section class="form-section">
+    <h2>
+     📝 Submit Your Private Tour Idea
+    </h2>
+    <form action="#">
+     <label for="name">
+      Your Name
+     </label>
+     <input id="name" name="name" required="" type="text"/>
+     <label for="email">
+      Email
+     </label>
+     <input id="email" name="email" required="" type="email"/>
+     <label for="idea">
+      Describe Your Dream Tour
+     </label>
+     <textarea id="idea" name="idea" required="" rows="5"></textarea>
+     <button type="submit">
+      Send
+     </button>
+    </form>
+   </section>
+   <section>
+    <h2>
+     🌟 Real Guest Testimonials
+    </h2>
+    <div class="testimonial">
+     “We had our own guide for just our family—safe, fun, and unforgettable.” – WalkerFam
+    </div>
+    <div class="testimonial">
+     “I finally photographed the Milky Way thanks to their timing and planning!” – AstroNomad
+    </div>
+   </section>
+   <section class="faq">
+    <h2>
+     ❓ FAQ
+    </h2>
+    <details>
+     <summary>
+      Can I pick the trail?
+     </summary>
+     <p>
+      Yes! We’ll collaborate on locations and distance based on your group’s goals.
+     </p>
+    </details>
+    <details>
+     <summary>
+      Do private tours include transportation?
+     </summary>
+     <p>
+      Yes, pickup and drop-off can be arranged from nearby towns or campgrounds.
+     </p>
+    </details>
+    <details>
+     <summary>
+      Is food included?
+     </summary>
+     <p>
+      Meal options are available—just let us know what you'd like during planning.
+     </p>
+    </details>
+   </section>
+   <section lang="es">
+    <h2>
+     🇪🇸 Soporte en Español
+    </h2>
+    <p>
+     Contamos con guías bilingües y recursos para ayudarte en cada paso del viaje.
+    </p>
+   </section>
+   <div id="footer-placeholder"></div>
+<script>
+  fetch("footer.html").then(res => res.text()).then(data => {
+    document.getElementById("footer-placeholder").innerHTML = data;
+  });
+</script>
+  </main>
+  <script>
+   const map = L.map('map').setView([37.2, -118.5], 7);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    const privateSpots = [
+      { name: "Cathedral Lakes", lat: 37.8456, lon: -119.4054 },
+      { name: "Big Pine Lakes", lat: 37.1197, lon: -118.5173 },
+      { name: "Alabama Hills", lat: 36.6039, lon: -118.1196 },
+      { name: "Convict Lake", lat: 37.6001, lon: -118.8515 },
+    ];
+
+    privateSpots.forEach(loc => {
+      L.marker([loc.lat, loc.lon]).addTo(map)
+        .bindPopup(`<strong>${loc.name}</strong>`);
+    });
+  </script>
+  <script>
+   function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+  }
+  function toggleSpanish() {
+    alert("Spanish toggle coming soon!");
+  }
+  </script>
+ </body>
+</html>

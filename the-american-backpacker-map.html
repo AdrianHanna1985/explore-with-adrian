@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Interactive Map - The American Backpacker
+  </title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <link href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" rel="stylesheet"/>
+  <style>
+   body {
+      margin: 0;
+      background-color: #1e1e1e;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    #map {
+      height: 70vh;
+      width: 100%;
+    }
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      padding: 12px;
+      background-color: #2c2c2c;
+      border-top: 2px solid #444;
+    }
+    .carousel img {
+      height: 120px;
+      margin-right: 10px;
+      border-radius: 8px;
+      transition: transform 0.2s ease-in-out;
+      cursor: pointer;
+    }
+    .carousel img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+ </head>
+ <body>
+  <div id="nav-placeholder"></div>
+<script>
+  fetch("nav.html").then(res => res.text()).then(data => {
+    document.getElementById("nav-placeholder").innerHTML = data;
+  });
+</script>
+  <div id="map">
+  </div>
+  <div class="carousel">
+   <img alt="Trip Photo" src="/assets/images/lone-pine-001.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-002.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-003.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-004.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-005.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-006.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-007.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-008.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-009.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-010.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-011.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-012.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-013.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-014.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-015.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-016.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-017.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-018.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-019.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-020.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-021.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-022.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-023.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-024.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-026.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-027.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-028.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-029.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-030.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-032.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-033.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-034.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-035.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-036.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-037.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-039.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-040.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-041.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-042.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-043.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-044.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-045.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-046.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-047.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-048.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-049.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-050.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-052.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-053.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-054.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-055.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-056.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-057.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-058.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-059.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-060.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-061.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-062.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-063.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-064.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-065.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-066.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-067.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-068.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-069.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-070.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-071.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-072.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-073.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-074.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-075.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-076.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-077.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-078.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-079.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-080.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-081.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-082.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-083.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-084.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-085.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-087.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-088.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-089.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-090.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-091.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-092.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-093.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-094.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-095.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-096.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-097.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-098.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-099.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-100.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-101.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-102.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-103.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-104.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-105.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-106.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-107.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-108.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-109.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-110.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-111.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-112.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-113.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-114.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-115.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-116.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-117.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-118.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-119.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-120.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-121.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-122.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-123.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-124.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-125.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-126.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-127.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-128.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-129.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-130.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-131.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-132.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-133.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-134.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-135.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-136.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-138.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-139.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-140.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-141.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-142.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-143.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-144.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-145.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-146.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-147.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-148.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-149.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-150.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-151.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-152.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-153.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-154.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-155.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-156.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-157.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-158.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-159.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-160.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-161.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-162.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-163.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-164.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-165.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-166.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-167.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-168.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-169.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-170.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-171.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-172.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-173.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-174.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-175.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-176.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-177.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-178.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-179.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-180.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-181.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-182.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-183.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-184.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-185.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-186.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-187.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-188.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-189.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-190.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-191.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-192.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-193.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-194.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-195.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-196.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-197.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-198.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-199.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-200.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-201.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-202.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-203.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/lone-pine-204.mp4"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-001.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-002.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-003.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-004.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-005.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-006.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-007.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-008.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-009.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-010.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-011.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-012.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-013.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-014.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-015.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-016.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-017.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-018.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-019.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-020.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-021.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-022.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-023.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-024.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-025.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-026.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-027.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-028.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-029.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-030.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-031.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-032.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-033.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-034.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-035.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-036.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-037.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-038.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-039.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-040.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-041.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-042.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-043.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-044.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-045.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-046.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-047.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-048.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-049.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-050.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-051.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-052.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-053.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-054.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-055.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-056.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-057.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-058.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-059.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-060.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-061.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-062.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-063.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-064.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-065.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-066.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-067.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-068.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-069.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-070.jpg"/>
+   <img alt="Trip Photo" src="/assets/images/yosemite-071.mp4"/>
+  </div>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js">
+  </script>
+  <script>
+   var map = L.map('map').setView([36.891844444444445, -118.47826673895084], 10);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+    
+    L.marker([36.60785833333333, -118.06428055555556]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-001.jpg" style="width:150px;">');
+    
+    L.marker([36.61122777777778, -118.12498333333333]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-002.jpg" style="width:150px;">');
+    
+    L.marker([36.613550000000004, -118.12577222222221]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-003.jpg" style="width:150px;">');
+    
+    L.marker([36.62022777777778, -118.19313333333334]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-004.jpg" style="width:150px;">');
+    
+    L.marker([36.604025, -118.06231944444444]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-005.jpg" style="width:150px;">');
+    
+    L.marker([36.60395277777778, -118.06226111111111]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-006.jpg" style="width:150px;">');
+    
+    L.marker([36.603633333333335, -118.06226111111111]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-007.jpg" style="width:150px;">');
+    
+    L.marker([36.603625, -118.06226111111111]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-008.jpg" style="width:150px;">');
+    
+    L.marker([36.60423611111111, -118.06305833333333]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-009.jpg" style="width:150px;">');
+    
+    L.marker([36.604086111111116, -118.06319166666667]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-010.jpg" style="width:150px;">');
+    
+    L.marker([36.603325, -118.06228333333333]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-011.jpg" style="width:150px;">');
+    
+    L.marker([36.60509722222223, -118.06314444444445]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-012.jpg" style="width:150px;">');
+    
+    L.marker([36.60503055555556, -118.06311666666666]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-013.jpg" style="width:150px;">');
+    
+    L.marker([36.605105555555554, -118.06306666666666]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-014.jpg" style="width:150px;">');
+    
+    L.marker([36.60511666666667, -118.06306666666666]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-015.jpg" style="width:150px;">');
+    
+    L.marker([36.60477777777778, -118.06309166666666]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-016.jpg" style="width:150px;">');
+    
+    L.marker([36.604530555555556, -118.0629]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-017.jpg" style="width:150px;">');
+    
+    L.marker([36.604505555555555, -118.06290555555556]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-018.jpg" style="width:150px;">');
+    
+    L.marker([36.60444444444445, -118.06298888888888]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-019.jpg" style="width:150px;">');
+    
+    L.marker([36.604397222222225, -118.06300833333333]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-020.jpg" style="width:150px;">');
+    
+    L.marker([36.60445, -118.06302777777778]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-021.jpg" style="width:150px;">');
+    
+    L.marker([36.60413611111111, -118.06301388888889]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-022.jpg" style="width:150px;">');
+    
+    L.marker([36.604280555555555, -118.06305555555555]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-023.jpg" style="width:150px;">');
+    
+    L.marker([36.60426944444445, -118.06305277777777]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-024.jpg" style="width:150px;">');
+    
+    L.marker([36.60378333333333, -118.06266111111111]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-026.jpg" style="width:150px;">');
+    
+    L.marker([36.603772222222226, -118.06262777777778]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-027.jpg" style="width:150px;">');
+    
+    L.marker([36.60361388888889, -118.06252777777777]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-028.jpg" style="width:150px;">');
+    
+    L.marker([36.603744444444445, -118.06241944444444]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-029.jpg" style="width:150px;">');
+    
+    L.marker([36.6037, -118.06240277777778]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-030.jpg" style="width:150px;">');
+    
+    L.marker([36.60506111111111, -118.063225]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-032.jpg" style="width:150px;">');
+    
+    L.marker([36.60533888888889, -118.06333333333333]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-033.jpg" style="width:150px;">');
+    
+    L.marker([36.60626944444444, -118.06365277777778]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-034.jpg" style="width:150px;">');
+    
+    L.marker([36.60670833333334, -118.06404166666667]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-035.jpg" style="width:150px;">');
+    
+    L.marker([36.60689166666667, -118.06414722222222]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-036.jpg" style="width:150px;">');
+    
+    L.marker([36.60747777777778, -118.06436944444444]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-037.jpg" style="width:150px;">');
+    
+    L.marker([36.60763611111111, -118.06429444444444]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-039.jpg" style="width:150px;">');
+    
+    L.marker([36.60692777777778, -118.06390555555555]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-040.jpg" style="width:150px;">');
+    
+    L.marker([36.60743055555556, -118.06433888888888]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-041.jpg" style="width:150px;">');
+    
+    L.marker([36.60738055555556, -118.06414722222222]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-042.jpg" style="width:150px;">');
+    
+    L.marker([36.606575, -118.06369722222222]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-043.jpg" style="width:150px;">');
+    
+    L.marker([36.606547222222225, -118.06375277777778]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-044.jpg" style="width:150px;">');
+    
+    L.marker([36.60615, -118.06336388888889]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-045.jpg" style="width:150px;">');
+    
+    L.marker([36.60522777777778, -118.06327499999999]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-046.jpg" style="width:150px;">');
+    
+    L.marker([36.604475, -118.06284722222222]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-047.jpg" style="width:150px;">');
+    
+    L.marker([36.60456666666667, -118.06270277777777]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-048.jpg" style="width:150px;">');
+    
+    L.marker([36.604594444444444, -118.06275555555555]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-049.jpg" style="width:150px;">');
+    
+    L.marker([36.60429444444445, -118.06268055555556]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-050.jpg" style="width:150px;">');
+    
+    L.marker([36.601841666666665, -118.06136944444444]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-052.jpg" style="width:150px;">');
+    
+    L.marker([36.601150000000004, -118.06100555555555]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-053.jpg" style="width:150px;">');
+    
+    L.marker([36.60405, -118.06250833333333]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-054.jpg" style="width:150px;">');
+    
+    L.marker([36.60400277777778, -118.06249722222222]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-055.jpg" style="width:150px;">');
+    
+    L.marker([36.60400555555556, -118.06249444444444]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-056.jpg" style="width:150px;">');
+    
+    L.marker([36.60398888888889, -118.06231944444444]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-057.jpg" style="width:150px;">');
+    
+    L.marker([36.603991666666666, -118.06229166666667]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-058.jpg" style="width:150px;">');
+    
+    L.marker([36.60398611111111, -118.06229166666667]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-059.jpg" style="width:150px;">');
+    
+    L.marker([36.60395833333334, -118.06226944444444]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-060.jpg" style="width:150px;">');
+    
+    L.marker([36.60407777777778, -118.06242777777777]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-061.jpg" style="width:150px;">');
+    
+    L.marker([36.604083333333335, -118.06245833333332]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-062.jpg" style="width:150px;">');
+    
+    L.marker([36.604080555555555, -118.06245]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-063.jpg" style="width:150px;">');
+    
+    L.marker([36.60407222222222, -118.06246388888889]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-064.jpg" style="width:150px;">');
+    
+    L.marker([36.60483333333333, -118.06367777777777]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-065.jpg" style="width:150px;">');
+    
+    L.marker([36.604925, -118.06311111111111]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-066.jpg" style="width:150px;">');
+    
+    L.marker([36.604886111111114, -118.0632]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-067.jpg" style="width:150px;">');
+    
+    L.marker([36.608247222222225, -118.06504722222222]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-068.jpg" style="width:150px;">');
+    
+    L.marker([36.60828333333333, -118.06523055555556]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-069.jpg" style="width:150px;">');
+    
+    L.marker([36.60828055555556, -118.0652361111111]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-070.jpg" style="width:150px;">');
+    
+    L.marker([36.60830833333333, -118.06524999999999]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-071.jpg" style="width:150px;">');
+    
+    L.marker([36.608311111111114, -118.06525555555555]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-072.jpg" style="width:150px;">');
+    
+    L.marker([36.608311111111114, -118.06525555555555]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-073.jpg" style="width:150px;">');
+    
+    L.marker([36.60876388888889, -118.06504444444444]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-074.jpg" style="width:150px;">');
+    
+    L.marker([36.605738888888894, -118.0637]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-075.jpg" style="width:150px;">');
+    
+    L.marker([36.60566666666667, -118.06368611111111]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-076.jpg" style="width:150px;">');
+    
+    L.marker([36.60389444444444, -118.06254166666666]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-077.jpg" style="width:150px;">');
+    
+    L.marker([36.60391944444444, -118.06252222222221]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-078.jpg" style="width:150px;">');
+    
+    L.marker([36.603969444444445, -118.06248333333333]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-079.jpg" style="width:150px;">');
+    
+    L.marker([36.603966666666665, -118.06248055555555]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-080.jpg" style="width:150px;">');
+    
+    L.marker([36.60396388888889, -118.06247499999999]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-081.jpg" style="width:150px;">');
+    
+    L.marker([36.603966666666665, -118.06246944444445]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-082.jpg" style="width:150px;">');
+    
+    L.marker([36.603966666666665, -118.06246666666667]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-083.jpg" style="width:150px;">');
+    
+    L.marker([36.60396388888889, -118.0624611111111]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-084.jpg" style="width:150px;">');
+    
+    L.marker([36.60396111111111, -118.06245555555556]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-085.jpg" style="width:150px;">');
+    
+    L.marker([36.600991666666665, -118.06110555555556]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-087.jpg" style="width:150px;">');
+    
+    L.marker([36.6009, -118.06149166666667]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-088.jpg" style="width:150px;">');
+    
+    L.marker([36.60091388888889, -118.06149166666667]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-089.jpg" style="width:150px;">');
+    
+    L.marker([36.600902777777776, -118.06149166666667]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-090.jpg" style="width:150px;">');
+    
+    L.marker([36.600902777777776, -118.06149166666667]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-091.jpg" style="width:150px;">');
+    
+    L.marker([36.600902777777776, -118.06149166666667]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-092.jpg" style="width:150px;">');
+    
+    L.marker([36.60089444444444, -118.06149444444443]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-093.jpg" style="width:150px;">');
+    
+    L.marker([36.60089722222222, -118.06148333333333]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-094.jpg" style="width:150px;">');
+    
+    L.marker([36.6009, -118.06146944444444]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-095.jpg" style="width:150px;">');
+    
+    L.marker([36.60089722222222, -118.06148333333333]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-096.jpg" style="width:150px;">');
+    
+    L.marker([36.60103888888889, -118.06150555555556]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-097.jpg" style="width:150px;">');
+    
+    L.marker([36.60100555555556, -118.06151666666666]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-098.jpg" style="width:150px;">');
+    
+    L.marker([36.60400277777778, -118.06269444444445]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-099.jpg" style="width:150px;">');
+    
+    L.marker([36.60483055555556, -118.06279722222222]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-100.jpg" style="width:150px;">');
+    
+    L.marker([36.604816666666665, -118.06278888888889]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-101.jpg" style="width:150px;">');
+    
+    L.marker([36.60574166666667, -118.06354166666667]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-102.jpg" style="width:150px;">');
+    
+    L.marker([36.565352777777775, -118.12842777777777]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-103.jpg" style="width:150px;">');
+    
+    L.marker([36.59066666666667, -118.11588333333333]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-104.jpg" style="width:150px;">');
+    
+    L.marker([36.56364444444444, -118.13058333333332]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-105.jpg" style="width:150px;">');
+    
+    L.marker([36.56548333333333, -118.12883333333333]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-106.jpg" style="width:150px;">');
+    
+    L.marker([36.567461111111115, -118.12344166666666]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-107.jpg" style="width:150px;">');
+    
+    L.marker([36.56744166666667, -118.12344444444444]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-108.jpg" style="width:150px;">');
+    
+    L.marker([36.567438888888894, -118.12345833333333]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-109.jpg" style="width:150px;">');
+    
+    L.marker([36.56708611111112, -118.12341944444444]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-110.jpg" style="width:150px;">');
+    
+    L.marker([36.56704166666667, -118.12354166666665]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-111.jpg" style="width:150px;">');
+    
+    L.marker([36.56520833333333, -118.12872222222222]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-112.jpg" style="width:150px;">');
+    
+    L.marker([36.56538055555555, -118.1287111111111]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-113.jpg" style="width:150px;">');
+    
+    L.marker([36.56543055555555, -118.12868055555555]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-114.jpg" style="width:150px;">');
+    
+    L.marker([36.56525833333333, -118.12866388888888]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-115.jpg" style="width:150px;">');
+    
+    L.marker([36.56528333333333, -118.12877499999999]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-116.jpg" style="width:150px;">');
+    
+    L.marker([36.56527777777777, -118.12872222222222]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-117.jpg" style="width:150px;">');
+    
+    L.marker([36.60393611111111, -118.06242777777777]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-118.jpg" style="width:150px;">');
+    
+    L.marker([36.604325, -118.06292222222221]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-119.jpg" style="width:150px;">');
+    
+    L.marker([36.60437777777778, -118.06309444444445]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-120.jpg" style="width:150px;">');
+    
+    L.marker([36.60395833333334, -118.06254166666666]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-121.jpg" style="width:150px;">');
+    
+    L.marker([36.605336111111114, -118.06311111111111]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-122.jpg" style="width:150px;">');
+    
+    L.marker([36.605330555555554, -118.06313333333333]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-123.jpg" style="width:150px;">');
+    
+    L.marker([36.60534722222222, -118.063125]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-124.jpg" style="width:150px;">');
+    
+    L.marker([36.605386111111116, -118.06312222222222]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-125.jpg" style="width:150px;">');
+    
+    L.marker([36.605758333333334, -118.06329722222222]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-126.jpg" style="width:150px;">');
+    
+    L.marker([36.60575, -118.06332777777777]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-127.jpg" style="width:150px;">');
+    
+    L.marker([36.605025000000005, -118.0632]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-128.jpg" style="width:150px;">');
+    
+    L.marker([36.605019444444444, -118.06321388888888]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-129.jpg" style="width:150px;">');
+    
+    L.marker([36.60501388888889, -118.06319722222221]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-130.jpg" style="width:150px;">');
+    
+    L.marker([36.60498611111111, -118.06319722222221]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-131.jpg" style="width:150px;">');
+    
+    L.marker([36.605025000000005, -118.06319166666667]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-132.jpg" style="width:150px;">');
+    
+    L.marker([36.60501388888889, -118.0632]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-133.jpg" style="width:150px;">');
+    
+    L.marker([36.60495, -118.06322222222222]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-134.jpg" style="width:150px;">');
+    
+    L.marker([36.60501666666667, -118.06321388888888]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-135.jpg" style="width:150px;">');
+    
+    L.marker([36.60501388888889, -118.0632111111111]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-136.jpg" style="width:150px;">');
+    
+    L.marker([36.60574722222222, -118.06324722222222]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-138.jpg" style="width:150px;">');
+    
+    L.marker([36.60581944444444, -118.06327499999999]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-139.jpg" style="width:150px;">');
+    
+    L.marker([36.605755555555554, -118.06325277777778]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-140.jpg" style="width:150px;">');
+    
+    L.marker([36.605775, -118.06330555555556]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-141.jpg" style="width:150px;">');
+    
+    L.marker([36.60400277777778, -118.06242499999999]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-142.jpg" style="width:150px;">');
+    
+    L.marker([36.60420555555556, -118.06311666666666]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-143.jpg" style="width:150px;">');
+    
+    L.marker([36.60409166666667, -118.06281388888888]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-144.jpg" style="width:150px;">');
+    
+    L.marker([36.60441388888889, -118.06273888888889]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-145.jpg" style="width:150px;">');
+    
+    L.marker([36.604483333333334, -118.06285555555556]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-146.jpg" style="width:150px;">');
+    
+    L.marker([36.56565277777778, -118.12937222222222]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-147.jpg" style="width:150px;">');
+    
+    L.marker([36.56556666666666, -118.129375]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-148.jpg" style="width:150px;">');
+    
+    L.marker([36.565580555555556, -118.12946944444444]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-149.jpg" style="width:150px;">');
+    
+    L.marker([36.56560277777778, -118.12950277777777]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-150.jpg" style="width:150px;">');
+    
+    L.marker([36.565666666666665, -118.12951388888888]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-151.jpg" style="width:150px;">');
+    
+    L.marker([36.565661111111105, -118.12950833333333]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-152.jpg" style="width:150px;">');
+    
+    L.marker([36.56561388888888, -118.12943055555554]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-153.jpg" style="width:150px;">');
+    
+    L.marker([36.56574444444444, -118.12946388888888]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-154.jpg" style="width:150px;">');
+    
+    L.marker([36.56486944444444, -118.12941666666666]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-155.jpg" style="width:150px;">');
+    
+    L.marker([36.56485833333333, -118.12951388888888]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-156.jpg" style="width:150px;">');
+    
+    L.marker([36.56449722222222, -118.13009444444444]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-157.jpg" style="width:150px;">');
+    
+    L.marker([36.564474999999995, -118.13012222222221]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-158.jpg" style="width:150px;">');
+    
+    L.marker([36.564477777777775, -118.13013055555555]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-159.jpg" style="width:150px;">');
+    
+    L.marker([36.56449722222222, -118.13022777777778]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-160.jpg" style="width:150px;">');
+    
+    L.marker([36.56448333333333, -118.13026111111111]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-161.jpg" style="width:150px;">');
+    
+    L.marker([36.564480555555555, -118.13032222222222]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-162.jpg" style="width:150px;">');
+    
+    L.marker([36.564588888888885, -118.13061111111111]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-163.jpg" style="width:150px;">');
+    
+    L.marker([36.564591666666665, -118.13061944444443]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-164.jpg" style="width:150px;">');
+    
+    L.marker([36.56458055555555, -118.13064999999999]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-165.jpg" style="width:150px;">');
+    
+    L.marker([36.564563888888884, -118.13065833333333]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-166.jpg" style="width:150px;">');
+    
+    L.marker([36.56657222222222, -118.12371944444443]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-167.jpg" style="width:150px;">');
+    
+    L.marker([36.56568333333333, -118.12945277777777]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-168.jpg" style="width:150px;">');
+    
+    L.marker([36.56838888888889, -118.12495277777776]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-169.jpg" style="width:150px;">');
+    
+    L.marker([36.56702777777778, -118.1300111111111]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-170.jpg" style="width:150px;">');
+    
+    L.marker([36.564794444444445, -118.12965]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-171.jpg" style="width:150px;">');
+    
+    L.marker([36.578900000000004, -118.05581666666666]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-172.jpg" style="width:150px;">');
+    
+    L.marker([36.57831388888889, -118.05534722222222]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-173.jpg" style="width:150px;">');
+    
+    L.marker([36.578294444444445, -118.05548611111111]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-174.jpg" style="width:150px;">');
+    
+    L.marker([36.60483055555556, -118.0632]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-175.jpg" style="width:150px;">');
+    
+    L.marker([36.60487777777778, -118.06275833333333]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-176.jpg" style="width:150px;">');
+    
+    L.marker([36.604847222222226, -118.06278333333333]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-177.jpg" style="width:150px;">');
+    
+    L.marker([36.60483611111111, -118.06279722222222]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-178.jpg" style="width:150px;">');
+    
+    L.marker([36.60485, -118.0628]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-179.jpg" style="width:150px;">');
+    
+    L.marker([36.604419444444446, -118.06306111111111]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-180.jpg" style="width:150px;">');
+    
+    L.marker([36.604416666666665, -118.06292777777777]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-181.jpg" style="width:150px;">');
+    
+    L.marker([36.60444722222223, -118.06299166666666]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-182.jpg" style="width:150px;">');
+    
+    L.marker([36.605075, -118.06321388888888]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-183.jpg" style="width:150px;">');
+    
+    L.marker([36.60406666666667, -118.06241666666666]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-184.jpg" style="width:150px;">');
+    
+    L.marker([36.60389444444444, -118.06272777777778]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-185.jpg" style="width:150px;">');
+    
+    L.marker([36.60409444444445, -118.06244444444444]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-186.jpg" style="width:150px;">');
+    
+    L.marker([36.60445, -118.06250833333333]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-187.jpg" style="width:150px;">');
+    
+    L.marker([36.60467222222223, -118.0630361111111]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-188.jpg" style="width:150px;">');
+    
+    L.marker([36.60398055555556, -118.06226944444444]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-189.jpg" style="width:150px;">');
+    
+    L.marker([36.603944444444444, -118.06223888888888]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-190.jpg" style="width:150px;">');
+    
+    L.marker([36.60489166666667, -118.06313333333333]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-191.jpg" style="width:150px;">');
+    
+    L.marker([36.60425, -118.06297222222221]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-192.jpg" style="width:150px;">');
+    
+    L.marker([36.60426388888889, -118.0629861111111]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-193.jpg" style="width:150px;">');
+    
+    L.marker([36.60424444444445, -118.063]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-194.jpg" style="width:150px;">');
+    
+    L.marker([36.606, -118.06361944444444]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-195.jpg" style="width:150px;">');
+    
+    L.marker([36.60597222222222, -118.06360277777777]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-196.jpg" style="width:150px;">');
+    
+    L.marker([36.605941666666666, -118.06363055555555]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-197.jpg" style="width:150px;">');
+    
+    L.marker([36.604841666666665, -118.06280833333334]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-198.jpg" style="width:150px;">');
+    
+    L.marker([36.57832777777778, -118.05581666666666]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-199.jpg" style="width:150px;">');
+    
+    L.marker([36.60384722222222, -118.06263055555556]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-200.jpg" style="width:150px;">');
+    
+    L.marker([36.60369722222222, -118.06255555555555]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-201.jpg" style="width:150px;">');
+    
+    L.marker([36.60348611111111, -118.06213333333334]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-202.jpg" style="width:150px;">');
+    
+    L.marker([36.60328611111111, -118.06205555555556]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-203.jpg" style="width:150px;">');
+    
+    L.marker([36.60563888888889, -118.06349999999999]).addTo(map)
+        .bindPopup('<img src="media/lone-pine-204.mp4" style="width:150px;">');
+    
+    L.marker([36.18118611111111, -119.33206666666666]).addTo(map)
+        .bindPopup('<img src="media/yosemite-001.jpg" style="width:150px;">');
+    
+    L.marker([37.218475000000005, -119.70811944444445]).addTo(map)
+        .bindPopup('<img src="media/yosemite-002.jpg" style="width:150px;">');
+    
+    L.marker([37.71562777777778, -119.70375]).addTo(map)
+        .bindPopup('<img src="media/yosemite-003.jpg" style="width:150px;">');
+    
+    L.marker([37.719433333333335, -119.65024166666667]).addTo(map)
+        .bindPopup('<img src="media/yosemite-004.jpg" style="width:150px;">');
+    
+    L.marker([37.73850277777778, -119.595525]).addTo(map)
+        .bindPopup('<img src="media/yosemite-005.jpg" style="width:150px;">');
+    
+    L.marker([37.74467777777778, -119.59698611111111]).addTo(map)
+        .bindPopup('<img src="media/yosemite-006.jpg" style="width:150px;">');
+    
+    L.marker([37.74468888888889, -119.58396111111111]).addTo(map)
+        .bindPopup('<img src="media/yosemite-007.jpg" style="width:150px;">');
+    
+    L.marker([37.744844444444446, -119.58418611111111]).addTo(map)
+        .bindPopup('<img src="media/yosemite-008.jpg" style="width:150px;">');
+    
+    L.marker([37.74483888888889, -119.58413055555555]).addTo(map)
+        .bindPopup('<img src="media/yosemite-009.jpg" style="width:150px;">');
+    
+    L.marker([37.744683333333334, -119.58410277777777]).addTo(map)
+        .bindPopup('<img src="media/yosemite-010.jpg" style="width:150px;">');
+    
+    L.marker([37.74841111111111, -119.58078055555555]).addTo(map)
+        .bindPopup('<img src="media/yosemite-011.jpg" style="width:150px;">');
+    
+    L.marker([37.74836666666667, -119.58079166666667]).addTo(map)
+        .bindPopup('<img src="media/yosemite-012.jpg" style="width:150px;">');
+    
+    L.marker([37.743836111111115, -119.58985555555554]).addTo(map)
+        .bindPopup('<img src="media/yosemite-013.jpg" style="width:150px;">');
+    
+    L.marker([37.74350277777778, -119.59004444444444]).addTo(map)
+        .bindPopup('<img src="media/yosemite-014.jpg" style="width:150px;">');
+    
+    L.marker([37.74346944444444, -119.58974166666667]).addTo(map)
+        .bindPopup('<img src="media/yosemite-015.jpg" style="width:150px;">');
+    
+    L.marker([37.74348333333334, -119.58973888888889]).addTo(map)
+        .bindPopup('<img src="media/yosemite-016.jpg" style="width:150px;">');
+    
+    L.marker([37.743455555555556, -119.58958055555556]).addTo(map)
+        .bindPopup('<img src="media/yosemite-017.jpg" style="width:150px;">');
+    
+    L.marker([37.74400833333333, -119.58979722222222]).addTo(map)
+        .bindPopup('<img src="media/yosemite-018.jpg" style="width:150px;">');
+    
+    L.marker([37.744033333333334, -119.58996666666667]).addTo(map)
+        .bindPopup('<img src="media/yosemite-019.jpg" style="width:150px;">');
+    
+    L.marker([37.7442, -119.59068611111111]).addTo(map)
+        .bindPopup('<img src="media/yosemite-020.jpg" style="width:150px;">');
+    
+    L.marker([37.74425, -119.59063888888889]).addTo(map)
+        .bindPopup('<img src="media/yosemite-021.jpg" style="width:150px;">');
+    
+    L.marker([37.744025, -119.59115555555555]).addTo(map)
+        .bindPopup('<img src="media/yosemite-022.jpg" style="width:150px;">');
+    
+    L.marker([37.74410833333334, -119.59100277777777]).addTo(map)
+        .bindPopup('<img src="media/yosemite-023.jpg" style="width:150px;">');
+    
+    L.marker([37.74372777777778, -119.5920861111111]).addTo(map)
+        .bindPopup('<img src="media/yosemite-024.jpg" style="width:150px;">');
+    
+    L.marker([37.74372777777778, -119.5920861111111]).addTo(map)
+        .bindPopup('<img src="media/yosemite-025.jpg" style="width:150px;">');
+    
+    L.marker([37.74296388888889, -119.59361944444444]).addTo(map)
+        .bindPopup('<img src="media/yosemite-026.jpg" style="width:150px;">');
+    
+    L.marker([37.74335, -119.593125]).addTo(map)
+        .bindPopup('<img src="media/yosemite-027.jpg" style="width:150px;">');
+    
+    L.marker([37.74319166666667, -119.593075]).addTo(map)
+        .bindPopup('<img src="media/yosemite-028.jpg" style="width:150px;">');
+    
+    L.marker([37.74636944444445, -119.59668333333333]).addTo(map)
+        .bindPopup('<img src="media/yosemite-029.jpg" style="width:150px;">');
+    
+    L.marker([37.746375, -119.59668055555555]).addTo(map)
+        .bindPopup('<img src="media/yosemite-030.jpg" style="width:150px;">');
+    
+    L.marker([37.74823333333333, -119.5962111111111]).addTo(map)
+        .bindPopup('<img src="media/yosemite-031.jpg" style="width:150px;">');
+    
+    L.marker([37.74973888888889, -119.59570277777777]).addTo(map)
+        .bindPopup('<img src="media/yosemite-032.jpg" style="width:150px;">');
+    
+    L.marker([37.74998611111111, -119.59569166666667]).addTo(map)
+        .bindPopup('<img src="media/yosemite-033.jpg" style="width:150px;">');
+    
+    L.marker([37.750055555555555, -119.59577222222222]).addTo(map)
+        .bindPopup('<img src="media/yosemite-034.jpg" style="width:150px;">');
+    
+    L.marker([37.750277777777775, -119.59657777777777]).addTo(map)
+        .bindPopup('<img src="media/yosemite-035.jpg" style="width:150px;">');
+    
+    L.marker([37.74996388888889, -119.5959361111111]).addTo(map)
+        .bindPopup('<img src="media/yosemite-036.jpg" style="width:150px;">');
+    
+    L.marker([37.748697222222226, -119.59313611111111]).addTo(map)
+        .bindPopup('<img src="media/yosemite-037.jpg" style="width:150px;">');
+    
+    L.marker([37.747325000000004, -119.59395555555555]).addTo(map)
+        .bindPopup('<img src="media/yosemite-038.jpg" style="width:150px;">');
+    
+    L.marker([37.74720277777778, -119.59385833333333]).addTo(map)
+        .bindPopup('<img src="media/yosemite-039.jpg" style="width:150px;">');
+    
+    L.marker([37.74587777777778, -119.59610277777777]).addTo(map)
+        .bindPopup('<img src="media/yosemite-040.jpg" style="width:150px;">');
+    
+    L.marker([37.74709444444444, -119.59632222222221]).addTo(map)
+        .bindPopup('<img src="media/yosemite-041.jpg" style="width:150px;">');
+    
+    L.marker([37.74711388888889, -119.596325]).addTo(map)
+        .bindPopup('<img src="media/yosemite-042.jpg" style="width:150px;">');
+    
+    L.marker([37.75001388888889, -119.59570833333333]).addTo(map)
+        .bindPopup('<img src="media/yosemite-043.jpg" style="width:150px;">');
+    
+    L.marker([37.74997777777778, -119.59567777777777]).addTo(map)
+        .bindPopup('<img src="media/yosemite-044.jpg" style="width:150px;">');
+    
+    L.marker([37.74997777777778, -119.59568055555555]).addTo(map)
+        .bindPopup('<img src="media/yosemite-045.jpg" style="width:150px;">');
+    
+    L.marker([37.74850555555555, -119.59583888888888]).addTo(map)
+        .bindPopup('<img src="media/yosemite-046.jpg" style="width:150px;">');
+    
+    L.marker([37.749027777777776, -119.59511111111111]).addTo(map)
+        .bindPopup('<img src="media/yosemite-047.jpg" style="width:150px;">');
+    
+    L.marker([37.746319444444445, -119.59655555555555]).addTo(map)
+        .bindPopup('<img src="media/yosemite-048.jpg" style="width:150px;">');
+    
+    L.marker([37.74666666666667, -119.59619166666666]).addTo(map)
+        .bindPopup('<img src="media/yosemite-049.jpg" style="width:150px;">');
+    
+    L.marker([37.750008333333334, -119.59573611111111]).addTo(map)
+        .bindPopup('<img src="media/yosemite-050.jpg" style="width:150px;">');
+    
+    L.marker([37.74999444444445, -119.5957]).addTo(map)
+        .bindPopup('<img src="media/yosemite-051.jpg" style="width:150px;">');
+    
+    L.marker([37.74516666666667, -119.59681111111111]).addTo(map)
+        .bindPopup('<img src="media/yosemite-052.jpg" style="width:150px;">');
+    
+    L.marker([37.7421, -119.60212777777777]).addTo(map)
+        .bindPopup('<img src="media/yosemite-053.jpg" style="width:150px;">');
+    
+    L.marker([37.742108333333334, -119.602125]).addTo(map)
+        .bindPopup('<img src="media/yosemite-054.jpg" style="width:150px;">');
+    
+    L.marker([37.74471944444444, -119.60496111111111]).addTo(map)
+        .bindPopup('<img src="media/yosemite-055.jpg" style="width:150px;">');
+    
+    L.marker([37.74566388888889, -119.60629444444444]).addTo(map)
+        .bindPopup('<img src="media/yosemite-056.jpg" style="width:150px;">');
+    
+    L.marker([37.745669444444445, -119.60631944444444]).addTo(map)
+        .bindPopup('<img src="media/yosemite-057.jpg" style="width:150px;">');
+    
+    L.marker([37.74603611111111, -119.60536666666665]).addTo(map)
+        .bindPopup('<img src="media/yosemite-058.jpg" style="width:150px;">');
+    
+    L.marker([37.74630277777778, -119.60340277777777]).addTo(map)
+        .bindPopup('<img src="media/yosemite-059.jpg" style="width:150px;">');
+    
+    L.marker([37.746316666666665, -119.60312499999999]).addTo(map)
+        .bindPopup('<img src="media/yosemite-060.jpg" style="width:150px;">');
+    
+    L.marker([37.74645, -119.60274444444444]).addTo(map)
+        .bindPopup('<img src="media/yosemite-061.jpg" style="width:150px;">');
+    
+    L.marker([37.74645, -119.60272499999999]).addTo(map)
+        .bindPopup('<img src="media/yosemite-062.jpg" style="width:150px;">');
+    
+    L.marker([37.74665, -119.60271944444443]).addTo(map)
+        .bindPopup('<img src="media/yosemite-063.jpg" style="width:150px;">');
+    
+    L.marker([37.750861111111114, -119.59855555555555]).addTo(map)
+        .bindPopup('<img src="media/yosemite-064.jpg" style="width:150px;">');
+    
+    L.marker([37.75096388888889, -119.59860277777777]).addTo(map)
+        .bindPopup('<img src="media/yosemite-065.jpg" style="width:150px;">');
+    
+    L.marker([37.75369166666667, -119.59915277777777]).addTo(map)
+        .bindPopup('<img src="media/yosemite-066.jpg" style="width:150px;">');
+    
+    L.marker([37.754672222222226, -119.60111666666666]).addTo(map)
+        .bindPopup('<img src="media/yosemite-067.jpg" style="width:150px;">');
+    
+    L.marker([37.74495, -119.59737222222222]).addTo(map)
+        .bindPopup('<img src="media/yosemite-068.jpg" style="width:150px;">');
+    
+    L.marker([37.737116666666665, -119.60840833333333]).addTo(map)
+        .bindPopup('<img src="media/yosemite-069.jpg" style="width:150px;">');
+    
+    L.marker([37.71566666666667, -119.6768888888889]).addTo(map)
+        .bindPopup('<img src="media/yosemite-070.jpg" style="width:150px;">');
+    
+    L.marker([37.74997777777778, -119.59567777777777]).addTo(map)
+        .bindPopup('<img src="media/yosemite-071.MP4" style="width:150px;">');
+  </script>
+  <script>
+   function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+  }
+  function toggleSpanish() {
+    alert("Spanish toggle coming soon!");
+  }
+  </script>
+ </body>
+</html>

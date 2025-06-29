@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Overnight Tours | The American Backpacker
+  </title>
+  <link href="styles.css" rel="stylesheet"/>
+  <link href="https://unpkg.com/leaflet/dist/leaflet.css" rel="stylesheet"/>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js">
+  </script>
+  <style>
+   body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #d8f3dc, #b7e4c7, #a5d6a7);
+      color: #1b4332;
+    }
+    header, main {
+      padding: 1rem;
+    }
+    .tour-card {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      background-color: #ffffffdd;
+    }
+    blockquote {
+      background: #d8f3dc;
+      border-left: 4px solid #40916c;
+      padding: 1rem;
+      margin: 1rem 0;
+      font-style: italic;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+    }
+    [lang="es"] {
+      font-style: italic;
+      color: #2d6a4f;
+    }
+    #map {
+      height: 400px;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+    .booking-section, .gear-section {
+      background-color: #ffffffdd;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    .print-button {
+      margin-top: 1rem;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: #74c69d;
+      color: #1b4332;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #1b4332;
+        color: #d8f3dc;
+      }
+      .tour-card, .booking-section, .gear-section {
+        background-color: #2d6a4f;
+        border-color: #95d5b2;
+      }
+      blockquote {
+        background: #40916c;
+        border-color: #74c69d;
+        color: #fff;
+      }
+    }
+  </style>
+ </head>
+ <body>
+  <div id="nav-placeholder"></div>
+<script>
+  fetch("nav.html").then(res => res.text()).then(data => {
+    document.getElementById("nav-placeholder").innerHTML = data;
+  });
+</script>
+  <header>
+   <h1>
+    🏕️ Overnight Adventures
+   </h1>
+  </header>
+  <main>
+   <section id="tours">
+    <div class="tour-card">
+     <h2>
+      Cathedral Lakes Stargazer Trek
+     </h2>
+     <p>
+      Camp under the stars in Yosemite’s high country with alpine lakes and sunrise peaks.
+     </p>
+    </div>
+    <div class="tour-card">
+     <h2>
+      Little Lakes Valley Backpack
+     </h2>
+     <p>
+      Family-friendly overnight trip through a stunning series of lakes below Bear Creek Spire.
+     </p>
+    </div>
+    <div class="tour-card">
+     <h2>
+      Big Pine Lakes Overnighter
+     </h2>
+     <p>
+      Explore turquoise glacial lakes and spend the night near Palisade Glacier trail.
+     </p>
+    </div>
+    <div class="tour-card">
+     <h2>
+      Alger Lakes Wilderness Night
+     </h2>
+     <p>
+      Remote camping experience in a lesser-known alpine basin full of serenity and solitude.
+     </p>
+    </div>
+    <div class="tour-card">
+     <h2>
+      Giant Sequoia Basecamp
+     </h2>
+     <p>
+      Spend the night among ancient trees and hike by lantern under towering trunks.
+     </p>
+    </div>
+   </section>
+   <section>
+    <h2>
+     🗺️ Interactive Map
+    </h2>
+    <div id="map">
+    </div>
+   </section>
+   <section>
+    <h2>
+     🚨 Real-Time Trail Alerts
+    </h2>
+    <p>
+     <a href="https://www.fs.usda.gov/alerts/inyo/alerts-notices" target="_blank">
+      Click here for Inyo National Forest closures, fire updates, and trail alerts.
+     </a>
+    </p>
+   </section>
+   <section class="booking-section">
+    <h2>
+     📅 Book Your Overnight Tour
+    </h2>
+    <p>
+     Ready to sleep under the stars? Reserve your spot now!
+    </p>
+    <a href="booking.html">
+     Click here to book a guided overnight adventure
+    </a>
+   </section>
+   <section class="gear-section">
+    <h2>
+     🎒 Gear Recommendations &amp; Checklist
+    </h2>
+    <ul>
+     <li>
+      Backpack (50L or larger)
+     </li>
+     <li>
+      Sleeping bag &amp; sleeping pad
+     </li>
+     <li>
+      Lightweight tent or bivy
+     </li>
+     <li>
+      Layered clothing for warm days &amp; cold nights
+     </li>
+     <li>
+      Camp stove or JetBoil (optional)
+     </li>
+     <li>
+      Headlamp, sunscreen, bug spray
+     </li>
+     <li>
+      2L+ water capacity, filter or purification tablets
+     </li>
+     <li>
+      Bear-proof canister (provided)
+     </li>
+    </ul>
+    <button class="print-button" onclick="window.print()">
+     🖨️ Print Checklist
+    </button>
+   </section>
+   <section>
+    <h2>
+     🌟 Guest Testimonials
+    </h2>
+    <blockquote>
+     “The view of the Milky Way from camp was unreal!” – CampNomad22
+    </blockquote>
+    <blockquote>
+     “Snowmelt creeks, fresh pine air, and silence—best reset ever.” – TrailSoul17
+    </blockquote>
+   </section>
+   <section>
+    <h2>
+     ❓ FAQ
+    </h2>
+    <details>
+     <summary>
+      Do I need prior experience?
+     </summary>
+     <p>
+      Nope! Our guides help beginners every step of the way.
+     </p>
+    </details>
+    <details>
+     <summary>
+      What meals are provided?
+     </summary>
+     <p>
+      We include trail snacks, hot dinner, and camp breakfast.
+     </p>
+    </details>
+    <details>
+     <summary>
+      What gear should I bring?
+     </summary>
+     <p>
+      We'll send a packing list and provide tent/sleep system if needed.
+     </p>
+    </details>
+   </section>
+   <section lang="es">
+    <h2>
+     🇪🇸 Soporte en Español
+    </h2>
+    <p>
+     Contamos con guías bilingües y recursos para ayudarte en cada paso del viaje.
+    </p>
+   </section>
+   <div id="footer-placeholder"></div>
+<script>
+  fetch("footer.html").then(res => res.text()).then(data => {
+    document.getElementById("footer-placeholder").innerHTML = data;
+  });
+</script>
+  </main>
+  <script>
+   const map = L.map('map').setView([37.1, -118.4], 7);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    const locations = [
+      { name: "Cathedral Lakes", lat: 37.8456, lon: -119.4054, gpx: "downloads/cathedral-lakes.gpx" },
+      { name: "Little Lakes Valley", lat: 37.436, lon: -118.738, gpx: "downloads/little-lakes-valley.gpx" },
+      { name: "Big Pine Lakes", lat: 37.1197, lon: -118.5173, gpx: "downloads/big-pine-lakes.gpx" },
+      { name: "Alger Lakes", lat: 37.6178, lon: -119.0866, gpx: "downloads/alger-lakes.gpx" },
+      { name: "Giant Sequoia Grove", lat: 36.5775, lon: -118.7558, gpx: "downloads/giant-sequoia.gpx" }
+    ];
+
+    locations.forEach(loc => {
+      L.marker([loc.lat, loc.lon]).addTo(map).bindPopup(
+        `<strong>${loc.name}</strong><br><a href="${loc.gpx}" download>📥 Download GPX</a>`
+      );
+    });
+  </script>
+  <script>
+   function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+  }
+  function toggleSpanish() {
+    alert("Spanish toggle coming soon!");
+  }
+  </script>
+ </body>
+</html>

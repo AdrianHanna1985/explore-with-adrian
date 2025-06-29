@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Terms of Service – The American Backpacker
+  </title>
+  <link href="styles.css" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: system-ui, sans-serif;
+      background: #fefae0;
+      color: #333;
+      margin: 0;
+      line-height: 1.6;
+    }
+    .dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+    .hero {
+      background: linear-gradient(to right, #606c38, #283618);
+      color: white;
+      height: 40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+    h2 {
+      margin-top: 2rem;
+      color: #444;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+      padding: 1rem;
+    }
+  </style>
+ </head>
+ <body>
+  <div id="nav-placeholder"></div>
+<script>
+  fetch("nav.html").then(res => res.text()).then(data => {
+    document.getElementById("nav-placeholder").innerHTML = data;
+  });
+</script>
+  <div class="hero">
+   <h1>
+    Terms of Service
+   </h1>
+  </div>
+  <div class="container">
+   <p>
+    Welcome to The American Backpacker. By using our website and booking services, you agree to the following terms and conditions:
+   </p>
+   <h2>
+    1. Acceptance of Terms
+   </h2>
+   <p>
+    By accessing our site or using our services, you confirm that you have read, understood, and agree to these terms.
+   </p>
+   <h2>
+    2. Services
+   </h2>
+   <p>
+    We offer guided tours, trip planning, and related outdoor experiences. We reserve the right to modify or discontinue services at any time.
+   </p>
+   <h2>
+    3. Booking and Cancellations
+   </h2>
+   <p>
+    All bookings are subject to availability. Cancellations made within 7 days of a trip are non-refundable unless otherwise specified in your package.
+   </p>
+   <h2>
+    4. User Conduct
+   </h2>
+   <p>
+    You agree to respect all guides, fellow participants, and the environment. We reserve the right to remove any participant for misconduct.
+   </p>
+   <h2>
+    5. Liability
+   </h2>
+   <p>
+    Outdoor activities carry inherent risks. By participating, you accept personal responsibility for your safety and any loss or injury that may occur.
+   </p>
+   <h2>
+    6. Changes to Terms
+   </h2>
+   <p>
+    We may update these terms from time to time. Continued use of our website or services indicates your acceptance of any changes.
+   </p>
+   <p>
+    If you have questions about these terms, please
+    <a href="contact.html">
+     contact us
+    </a>
+    .
+   </p>
+  </div>
+  <div id="footer-placeholder"></div>
+<script>
+  fetch("footer.html").then(res => res.text()).then(data => {
+    document.getElementById("footer-placeholder").innerHTML = data;
+  });
+</script>
+  <script>
+   function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+ </body>
+</html>
